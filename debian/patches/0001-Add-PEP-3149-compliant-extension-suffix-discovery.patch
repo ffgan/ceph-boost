@@ -9,7 +9,7 @@ Subject: [PATCH] Add PEP-3149 compliant extension suffix discovery.
 
 --- a/tools/build/src/tools/python.jam
 +++ b/tools/build/src/tools/python.jam
-@@ -711,12 +711,6 @@
+@@ -709,12 +709,6 @@ local rule configure ( version ? : cmd-or-prefix ? : includes * : libraries ? :
      target-os ?= [ feature.defaults target-os ] ;
      target-os = $(target-os:G=) ;
  
@@ -22,7 +22,7 @@ Subject: [PATCH] Add PEP-3149 compliant extension suffix discovery.
      local cmds-to-try ;
  
      if ! $(cmd-or-prefix) || [ GLOB $(cmd-or-prefix) : * ]
-@@ -947,8 +941,33 @@
+@@ -945,8 +939,33 @@ local rule configure ( version ? : cmd-or-prefix ? : includes * : libraries ? :
      toolset.add-requirements
          "$(target-requirements:J=,):<python.interpreter>$(interpreter-cmd)" ;
  
@@ -56,5 +56,5 @@ Subject: [PATCH] Add PEP-3149 compliant extension suffix discovery.
 +    }
 +
  
-     #
-     # Declare the "python" target. This should really be called
+     # Make sure that the python feature is always considered
+     # relevant for any targets that depend on python.  Without
