@@ -263,7 +263,6 @@ override_dh_compress-indep:
 override_dh_install-common:
 	# Install Boost.Build v2 & jam
 	cd $(bbv2dir) && ./b2 install --prefix=$(CURDIR)/debian/tmp/usr --libdir=$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
-	mv debian/tmp/usr/share/boost-build/example debian/boost-build-examples
 
 	touch $@
 
@@ -396,7 +395,6 @@ override_dh_install-indep: override_dh_install-common
 	   usr/share/doc/libboost$(PKGVERSION)-doc/examples \
 	   usr/share/doc/libboost-doc/examples
 
-	dh_installexamples -plibboost$(PKGVERSION)-doc debian/boost-build-examples
 	mkdir -p $(exampledir)
 	cat debian/example-files | xargs cp -a --parents --target-directory=$(exampledir)
 	find $(exampledir) -type f | xargs chmod 644
