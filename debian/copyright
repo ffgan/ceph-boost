@@ -4,23 +4,41 @@ Upstream-Contact: https://www.boost.org/
 Files-Excluded:
  *.o
  *.js
+ *.pdf
  *.rc
  *.chm
+ *.mcp
  *.vcproj
  *.vcxproj
  *.vcxproj.filters
+ *.vsprops
+ *.TTF
+ *.sln
+ *.w
+ *.sty
+ *.patch
+ *.f90
+ *.odp
+ *.xls
+ *.xlsx
+ *.ppt
+ *.pptx
+ *.resx
+ *.cs
+ *.suo
+ *.cd
+ *.csproj
+ *.bmp
+ *.r
+ *.html
+ *.htm
  */resource.h
  */.gitignore
  */.gitattributes
  */.gitmodules
  libs/beast/test/extern/zlib-1.2.11/contrib/*
  libs/beast/test/extern/zlib-1.2.11/doc/*
- libs/gil/doc/html/*
- libs/locale/doc/html/*
- libs/sort/doc/doxygen/html/*
  doc/images/valid-html401.png
- tools/build/src/engine/boehm_gc/config.guess
- tools/build/src/engine/boehm_gc/config.sub
 
 Files: *
 Copyright: Boost project contributors
