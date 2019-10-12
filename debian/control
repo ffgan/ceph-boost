@@ -51,7 +51,6 @@ Suggests: libboost1.71-doc,
  libboost-random1.71-dev,
  libboost-regex1.71-dev,
  libboost-serialization1.71-dev,
- libboost-signals1.71-dev,
  libboost-stacktrace1.71-dev,
  libboost-system1.71-dev,
  libboost-test1.71-dev,
@@ -131,7 +130,6 @@ Depends: ${misc:Depends},
  libboost-random1.71-dev,
  libboost-regex1.71-dev,
  libboost-serialization1.71-dev,
- libboost-signals1.71-dev,
  libboost-stacktrace1.71-dev,
  libboost-system1.71-dev,
  libboost-test1.71-dev,
@@ -1222,40 +1220,6 @@ Description: serialization library for C++
  Here, "serialization" means the reversible deconstruction of an
  arbitrary set of C++ data structures to a sequence of bytes.
  archive: to refer to a specific rendering of this stream of bytes.
-
-Package: libboost-signals1.71.0
-Homepage: http://www.boost.org/libs/signals/
-Architecture: any
-Multi-Arch: same
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Pre-Depends: ${misc:Pre-Depends}
-Description: managed signals and slots library for C++
- This package forms part of the Boost C++ Libraries collection.
- .
- Signals represent callbacks with multiple targets, and are also
- called publishers or events in similar systems. Signals are connected
- to some set of slots, which are callback receivers (also called event
- targets or subscribers), which are called when the signal is
- "emitted."
-
-Package: libboost-signals1.71-dev
-Homepage: http://www.boost.org/libs/signals/
-Architecture: any
-Multi-Arch: same
-Section: libdevel
-Depends: ${misc:Depends},
- libboost1.71-dev (= ${binary:Version}),
- libboost-signals1.71.0 (= ${binary:Version})
-Conflicts: libboost-signals1.42-dev, libboost-signals1.46-dev, libboost-signals1.48-dev, libboost-signals1.49-dev, libboost-signals1.50-dev, libboost-signals1.52-dev, libboost-signals1.53-dev, libboost-signals1.54-dev, libboost-signals1.55-dev, libboost-signals1.57-dev, libboost-signals1.58-dev, libboost-signals1.60-dev, libboost-signals1.61-dev, libboost-signals1.62-dev, libboost-signals1.63-dev, libboost-signals1.65-dev, libboost-signals1.67-dev, libboost-signals1.70-dev
-Description: managed signals and slots library for C++
- This package forms part of the Boost C++ Libraries collection.
- .
- Signals represent callbacks with multiple targets, and are also
- called publishers or events in similar systems. Signals are connected
- to some set of slots, which are callback receivers (also called event
- targets or subscribers), which are called when the signal is
- "emitted."
 
 Package: libboost-stacktrace1.71.0
 Homepage: http://boost.org/libs/stacktrace/
