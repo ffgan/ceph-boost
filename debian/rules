@@ -404,10 +404,6 @@ override_dh_install-indep: override_dh_install-common
 override_dh_strip:
 	dh_strip --dbgsym-migration='libboost1.55-dbg, libboost1.58-dbg, libboost1.61-dbg'
 
-override_dh_makeshlibs:
-	dh_makeshlibs -plibboost-regex1.67.0 -V 'libboost-regex1.67.0 (>= 1.67.0-10)'
-	dh_makeshlibs --remaining-packages
-
 $(b2):
 	./bootstrap.sh --with-icu=/usr --prefix=$(CURDIR)/debian/tmp/usr \
 		--libdir=$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH) \

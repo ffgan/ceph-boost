@@ -1136,7 +1136,6 @@ Multi-Arch: same
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Breaks: ceph-common (= 12.2.8+dfsg1-1), ceph-common (= 12.2.8+dfsg1-2), nheko (= 0.6.1-1)
 Description: regular expression library for C++
  This package forms part of the Boost C++ Libraries collection.
  .
