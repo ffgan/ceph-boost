@@ -6,6 +6,8 @@ boost1.71 (1.71.0-1) UNRELEASED; urgency=medium
     boost & icu transitions.
   * Fix debian/watch to point at dl.bintray.com
   * Refresh patches for new tarball layout.
+  * Drop py2 builds. (Closes: #936227)
+  * Drop Debian-only compat py library symlinks. (Closes: #914513)
 
   [ Giovanni Mascellani ]
   * Add -contract as dependency of -dev-all.

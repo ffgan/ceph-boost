@@ -13,7 +13,6 @@ Build-Depends: debhelper (>= 10~), dpkg-dev (>= 1.16.1~), dctrl-tools, chrpath,
  docbook-xsl, docbook-xml, texlive-latex-base, ghostscript,
  dh-python,
  g++ (>= 4:5-0),
- python, python-all-dev, python-numpy,
  python3, python3-all-dev (>= 3.1), python3-numpy
 Build-Depends-Indep: graphviz
 Build-Conflicts: libopenmpi-dev (= 1.3.2-2)
@@ -938,10 +937,9 @@ Package: libboost-mpi-python1.71.0
 Homepage: http://www.boost.org/doc/html/mpi/python.html
 Architecture: any
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, ${python:Depends}, ${python3:Depends}, mpi-default-bin
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}, mpi-default-bin
 Pre-Depends: ${misc:Pre-Depends}
-Suggests: python, python3
-Breaks: ${python:Breaks}
+Suggests: python3
 Conflicts: libboost-mpi-python1.40.0,
  libboost-mpi-python1.41.0,
  libboost-mpi-python1.42.0,
@@ -985,7 +983,7 @@ Architecture: any
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Suggests: python, python3
+Suggests: python3
 Provides: ${boost:Provides}
 Description: Boost.Python NumPy extensions
  This package forms part of the Boost C++ Libraries collection.
@@ -1048,10 +1046,10 @@ Package: libboost-python1.71.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, ${python:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Suggests: python, python3
-Breaks: ${python:Breaks}
+Suggests: python3
+Breaks: ${python3:Breaks}
 Provides: ${boost:Provides}
 Description: Boost.Python Library
  This package forms part of the Boost C++ Libraries collection.
@@ -1077,7 +1075,6 @@ Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
  libboost-python1.71.0 (= ${binary:Version}),
- python-dev, ${python:Depends},
  python3-dev, ${python3:Depends},
 Suggests: libboost1.71-doc, gccxml
 Conflicts: libboost-python1.42-dev, libboost-python1.46-dev, libboost-python1.48-dev, libboost-python1.49-dev, libboost-python1.50-dev, libboost-python1.52-dev, libboost-python1.53-dev, libboost-python1.54-dev, libboost-python1.55-dev, libboost-python1.57-dev, libboost-python1.58-dev, libboost-python1.60-dev, libboost-python1.61-dev, libboost-python1.62-dev, libboost-python1.63-dev, libboost-python1.65-dev, libboost-python1.67-dev, libboost-python1.70-dev
