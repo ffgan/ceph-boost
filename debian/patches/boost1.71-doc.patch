@@ -1,0 +1,257 @@
+Description: Adjust doc paths to match new 1.71 tarball layout
+  Fixes documentation FTBFS
+Author: Dimitri John Ledkov <xnox@ubuntu.com>
+
+--- boost1.71-1.71.0.orig/boost/predef/hardware/simd.h
++++ boost1.71-1.71.0/boost/predef/hardware/simd.h
+@@ -39,29 +39,29 @@ http://www.boost.org/LICENSE_1_0.txt)
+      [[`BOOST_HW_SIMD_PPC_AVAILABLE`] [__predef_detection__]]
+      ]
+ 
+- [include ../include/boost/predef/hardware/simd/x86.h]
+- [include ../include/boost/predef/hardware/simd/x86_amd.h]
+- [include ../include/boost/predef/hardware/simd/arm.h]
+- [include ../include/boost/predef/hardware/simd/ppc.h]
++ [include ../../../boost/predef/hardware/simd/x86.h]
++ [include ../../../boost/predef/hardware/simd/x86_amd.h]
++ [include ../../../boost/predef/hardware/simd/arm.h]
++ [include ../../../boost/predef/hardware/simd/ppc.h]
+ 
+  [endsect]
+ 
+  [/ --------------------------- ]
+ 
+  [section `BOOST_HW_SIMD_X86_*_VERSION`]
+- [include ../include/boost/predef/hardware/simd/x86/versions.h]
++ [include ../../../boost/predef/hardware/simd/x86/versions.h]
+  [endsect]
+ 
+  [section `BOOST_HW_SIMD_X86_AMD_*_VERSION`]
+- [include ../include/boost/predef/hardware/simd/x86_amd/versions.h]
++ [include ../../../boost/predef/hardware/simd/x86_amd/versions.h]
+  [endsect]
+ 
+  [section `BOOST_HW_SIMD_ARM_*_VERSION`]
+- [include ../include/boost/predef/hardware/simd/arm/versions.h]
++ [include ../../../boost/predef/hardware/simd/arm/versions.h]
+  [endsect]
+ 
+  [section `BOOST_HW_SIMD_PPC_*_VERSION`]
+- [include ../include/boost/predef/hardware/simd/ppc/versions.h]
++ [include ../../../boost/predef/hardware/simd/ppc/versions.h]
+  [endsect]
+ 
+  */
+--- boost1.71-1.71.0.orig/libs/accumulators/doc/Jamfile.v2
++++ boost1.71-1.71.0/libs/accumulators/doc/Jamfile.v2
+@@ -118,7 +118,7 @@ else
+ {
+     CP = cp ;
+     MKDIR = mkdir -p ;
+-    FROM = /../../html/statsdoc/*.png ;
++    FROM = /html/statsdoc/*.png ;
+     TOHTML = ./html/images/accumulators ;
+     TOPDF = /images/accumulators ;
+ }
+--- boost1.71-1.71.0.orig/libs/contract/doc/Jamfile.v2
++++ boost1.71-1.71.0/libs/contract/doc/Jamfile.v2
+@@ -14,27 +14,27 @@ path-constant here : . ;
+ doxygen reference
+ :
+     [ glob
+-    ../include/boost/contract.hpp
+-    ../include/boost/contract_macro.hpp
++    ../../../boost/contract.hpp
++    ../../../boost/contract_macro.hpp
+     
+-    ../include/boost/contract/assert.hpp
+-    ../include/boost/contract/base_types.hpp
+-    ../include/boost/contract/call_if.hpp
+-    ../include/boost/contract/check.hpp
+-    ../include/boost/contract/constructor.hpp
+-    ../include/boost/contract/destructor.hpp
+-    ../include/boost/contract/function.hpp
+-    ../include/boost/contract/old.hpp
+-    ../include/boost/contract/override.hpp
+-    ../include/boost/contract/public_function.hpp
++    ../../../boost/contract/assert.hpp
++    ../../../boost/contract/base_types.hpp
++    ../../../boost/contract/call_if.hpp
++    ../../../boost/contract/check.hpp
++    ../../../boost/contract/constructor.hpp
++    ../../../boost/contract/destructor.hpp
++    ../../../boost/contract/function.hpp
++    ../../../boost/contract/old.hpp
++    ../../../boost/contract/override.hpp
++    ../../../boost/contract/public_function.hpp
+ 
+-    ../include/boost/contract/core/access.hpp
+-    ../include/boost/contract/core/check_macro.hpp
+-    ../include/boost/contract/core/config.hpp
+-    ../include/boost/contract/core/constructor_precondition.hpp
+-    ../include/boost/contract/core/exception.hpp
+-    ../include/boost/contract/core/specify.hpp
+-    ../include/boost/contract/core/virtual.hpp
++    ../../../boost/contract/core/access.hpp
++    ../../../boost/contract/core/check_macro.hpp
++    ../../../boost/contract/core/config.hpp
++    ../../../boost/contract/core/constructor_precondition.hpp
++    ../../../boost/contract/core/exception.hpp
++    ../../../boost/contract/core/specify.hpp
++    ../../../boost/contract/core/virtual.hpp
+     ]
+ :   
+     <reftitle>"Reference"
+--- boost1.71-1.71.0.orig/libs/convert/doc/jamfile.v2
++++ boost1.71-1.71.0/libs/convert/doc/jamfile.v2
+@@ -35,7 +35,7 @@ else
+ 
+ doxygen convert_reference
+   :
+-    [ glob $(here)/../include/boost/convert.hpp $(here)/../include/boost/make_default.hpp $(here)/../include/boost/convert/*.hpp ]
++    [ glob ../../../boost/convert.hpp ../../../boost/make_default.hpp ../../../boost/convert/*.hpp ]
+   :
+     <doxygen:param>PROJECT_NAME="CONVERT"
+     <doxygen:param>PROJECT_NUMBER=3
+--- boost1.71-1.71.0.orig/libs/dll/doc/Jamfile.v2
++++ boost1.71-1.71.0/libs/dll/doc/Jamfile.v2
+@@ -53,14 +53,14 @@ local doxygen_params =
+ doxygen autodoc_shared_library_core
+     :
+         [ glob 
+-            ../include/boost/dll/config.hpp
+-            ../include/boost/dll/shared_library.hpp
+-            ../include/boost/dll/shared_library_load_mode.hpp
+-            ../include/boost/dll/library_info.hpp
+-            ../include/boost/dll/runtime_symbol_info.hpp
+-            ../include/boost/dll/alias.hpp
++            ../../../boost/dll/config.hpp
++            ../../../boost/dll/shared_library.hpp
++            ../../../boost/dll/shared_library_load_mode.hpp
++            ../../../boost/dll/library_info.hpp
++            ../../../boost/dll/runtime_symbol_info.hpp
++            ../../../boost/dll/alias.hpp
+ 
+-            ../include/boost/dll/smart_library.hpp
++            ../../../boost/dll/smart_library.hpp
+         ]
+     :
+         $(doxygen_params)
+@@ -70,9 +70,9 @@ doxygen autodoc_shared_library_core
+ doxygen autodoc_shared_library_refcountable
+     :
+         [ glob 
+-            ../include/boost/dll/import.hpp
+-            ../include/boost/dll/import_class.hpp
+-            ../include/boost/dll/import_mangled.hpp
++            ../../../boost/dll/import.hpp
++            ../../../boost/dll/import_class.hpp
++            ../../../boost/dll/import_mangled.hpp
+         ]
+     :
+         $(doxygen_params)
+--- boost1.71-1.71.0.orig/libs/predef/build.jam
++++ boost1.71-1.71.0/libs/predef/build.jam
+@@ -26,7 +26,7 @@ exe my_thin : main.cpp : <dependency>lib
+ 
+ import project ;
+ 
+-path-constant BOOST_PREDEF_ROOT : . ;
++path-constant BOOST_PREDEF_ROOT : ../../ ;
+ path-constant BOOST_PREDEF_INCLUDE : include ;
+ constant PREDEF_DIST : boost ;
+ 
+--- boost1.71-1.71.0.orig/libs/predef/doc/build.jam
++++ boost1.71-1.71.0/libs/predef/doc/build.jam
+@@ -14,7 +14,7 @@ if ! $(BOOST_ROOT)
+ 
+ if $(BOOST_PREDEF_ROOT)
+ {
+-    path-constant BOOST_PREDEF_INCLUDE_ROOT : $(BOOST_PREDEF_ROOT)/include ;
++    path-constant BOOST_PREDEF_INCLUDE_ROOT : $(BOOST_PREDEF_ROOT) ;
+ }
+ else
+ {
+--- boost1.71-1.71.0.orig/libs/predef/doc/predef.qbk
++++ boost1.71-1.71.0/libs/predef/doc/predef.qbk
+@@ -524,43 +524,43 @@ and "Y", "M", "D" for dates.
+ [section Reference]
+ 
+ [section `BOOST_ARCH` architecture macros]
+-[include ../include/boost/predef/architecture/*.h]
+-[include ../include/boost/predef/architecture/x86/*.h]
++[include ../../../boost/predef/architecture/*.h]
++[include ../../../boost/predef/architecture/x86/*.h]
+ [endsect]
+ 
+ [section `BOOST_COMP` compiler macros]
+-[include ../include/boost/predef/compiler/*.h]
++[include ../../../boost/predef/compiler/*.h]
+ [endsect]
+ 
+ [section `BOOST_LANG` language standards macros]
+-[include ../include/boost/predef/language/*.h]
++[include ../../../boost/predef/language/*.h]
+ [endsect]
+ 
+ [section `BOOST_LIB` library macros]
+-[include ../include/boost/predef/library/c/*.h]
+-[include ../include/boost/predef/library/std/*.h]
++[include ../../../boost/predef/library/c/*.h]
++[include ../../../boost/predef/library/std/*.h]
+ [endsect]
+ 
+ [section `BOOST_OS` operating system macros]
+-[include ../include/boost/predef/os/*.h]
+-[include ../include/boost/predef/os/bsd/*.h]
++[include ../../../boost/predef/os/*.h]
++[include ../../../boost/predef/os/bsd/*.h]
+ [endsect]
+ 
+ [section `BOOST_PLAT` platform macros]
+-[include ../include/boost/predef/platform/*.h]
++[include ../../../boost/predef/platform/*.h]
+ [endsect]
+ 
+ [section `BOOST_HW` hardware macros]
+-[include ../include/boost/predef/hardware/*.h]
++[include ../../../boost/predef/hardware/*.h]
+ [endsect]
+ 
+ [section Other macros]
+-[include ../include/boost/predef/other/*.h]
++[include ../../../boost/predef/other/*.h]
+ [endsect]
+ 
+ [section Version definition macros]
+-[include ../include/boost/predef/version_number.h]
+-[include ../include/boost/predef/make.h]
++[include ../../../boost/predef/version_number.h]
++[include ../../../boost/predef/make.h]
+ [endsect]
+ 
+ [endsect]
+--- boost1.71-1.71.0.orig/libs/sort/doc/Jamfile.v2
++++ boost1.71-1.71.0/libs/sort/doc/Jamfile.v2
+@@ -50,8 +50,8 @@ else
+ 
+ doxygen autodoc
+   :
+-    [ glob $(here)/../include/boost/sort.hpp ]
+-    [ glob $(here)/../include/boost/sort/spreadsort/*.hpp ]
++    [ glob ../../../boost/sort/sort.hpp ]
++    [ glob ../../../boost/sort/spreadsort/*.hpp ]
+     # [ glob $(here)/../include/boost/sort/detail/spreadsort/*.hpp ] # Hide implementation/detail for now.
+     # but could also include this and switch Boost.Sort C++ reference info to include implementation/detail or not using Doxygen macro DETAIL.
+     # See http://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdcond
+--- boost1.71-1.71.0.orig/libs/yap/doc/yap.qbk
++++ boost1.71-1.71.0/libs/yap/doc/yap.qbk
+@@ -44,7 +44,7 @@
+ [import ../example/let.cpp]
+ [import ../test/user_expression_transform_2.cpp]
+ [import ../perf/arithmetic_perf.cpp]
+-[import ../include/boost/yap/detail/transform.hpp]
++[import ../../../boost/yap/detail/transform.hpp]
+ 
+ 
+ [/ Images ]
