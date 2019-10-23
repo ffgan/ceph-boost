@@ -5,6 +5,7 @@ boost1.71 (1.71.0-1) UNRELEASED; urgency=medium
   * Provide and Encode icuabi in libboost-regex shlibdeps. This de-couples
     boost & icu transitions.
   * Fix debian/watch to point at dl.bintray.com
+  * Refresh patches for new tarball layout.
 
   [ Giovanni Mascellani ]
   * Add -contract as dependency of -dev-all.
