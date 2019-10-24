@@ -9,6 +9,7 @@ boost1.71 (1.71.0-1) UNRELEASED; urgency=medium
   * Drop py2 builds. (Closes: #936227)
   * Drop Debian-only compat py library symlinks. (Closes: #914513)
   * Fix documentation build with new header paths.
+  * Ship cmake files, hopefully they are right.
 
   [ Giovanni Mascellani ]
   * Add -contract as dependency of -dev-all.
