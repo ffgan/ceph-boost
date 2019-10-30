@@ -8,8 +8,8 @@ See github issue 89.  The Debian patch was updated to remove this.
 
 
 
---- boost1.65.1-1.65.1+dfsg.orig/boost/math/tools/config.hpp
-+++ boost1.65.1-1.65.1+dfsg/boost/math/tools/config.hpp
+--- boost1.65.1-1.65.1+dfsg.orig/libs/math/include/boost/math/tools/config.hpp
++++ boost1.65.1-1.65.1+dfsg/libs/math/include/boost/math/tools/config.hpp
 @@ -29,9 +29,10 @@
  #include <boost/math/tools/user.hpp>
  
