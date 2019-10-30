@@ -19,4 +19,3 @@ fix_linux_detection.patch
 #002-fix-powerpc-uClibc-build-issue.patch
 #fix-boost-compute-gcc8-ftbfs.patch
 fix-mpi-python-compilation.patch
-boost1.71-doc.patch
