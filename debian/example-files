@@ -78,7 +78,6 @@ libs/safe_numerics/example
 libs/scope_exit/example
 libs/serialization/example
 libs/signals2/example
-libs/signals/example
 libs/smart_ptr/example
 libs/sort/example
 libs/spirit/classic/example
