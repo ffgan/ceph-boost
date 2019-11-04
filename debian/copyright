@@ -16,6 +16,7 @@ Files-Excluded:
  *.sln
  *.w
  *.sty
+ *.tex
  *.patch
  *.f90
  *.odp
@@ -32,13 +33,21 @@ Files-Excluded:
  *.r
  *.html
  *.htm
+ *.vpp
  */resource.h
  */.gitignore
  */.gitattributes
  */.gitmodules
+ */boost-no-inspect
+ tools/build/src/engine/debian/*
+ libs/outcome/doc/src/themes/boostdoc/*
  libs/beast/test/extern/zlib-1.2.11/contrib/*
  libs/beast/test/extern/zlib-1.2.11/doc/*
  doc/images/valid-html401.png
+ libs/python/.ci/install.ps1
+ tools/build/doc/src/hljs/styles/github.min.css
+ libs/qvm/doc/zajo.css
+ libs/config/configure
 
 Files: *
 Copyright: Boost project contributors
