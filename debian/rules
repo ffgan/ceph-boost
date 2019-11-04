@@ -243,6 +243,7 @@ override_dh_auto_clean: clean-debhelper
 ifeq ($(DEB_BUILD_ARCH), x32)
 	-mv tools/build/src/tools/gcc.jam.bak tools/build/src/tools/gcc.jam
 endif
+	rm -fr tools/build/src/engine/jamgram.{ch}pp
 	rm -rf tools/jam/src/bootstrap
 	rm -rf tools/jam/src/bin.*
 	rm -ff tools/jam/src/b2
@@ -338,6 +339,7 @@ override_dh_makeshlibs:
 	dh_makeshlibs --remaining-packages
 
 $(b2):
+	cd tools/build && bison -y -d -o src/engine/jamgram.cpp src/engine/jamgram.y
 	./bootstrap.sh --with-icu=/usr --prefix=$(CURDIR)/debian/tmp/usr \
 		--libdir=$(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH) \
 	  || cat bootstrap.log

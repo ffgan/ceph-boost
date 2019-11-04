@@ -15,6 +15,7 @@ boost1.71 (1.71.0-1) UNRELEASED; urgency=medium
   * Update to new upstream release 1.71.0.
     + Acknowledge removal of signals library.
     + Tweak build script accordingly.
+  * Regenerate bison grammar for jam at build time.
 
  -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 12 Mar 2019 03:44:54 +0000
 

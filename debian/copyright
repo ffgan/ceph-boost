@@ -48,6 +48,8 @@ Files-Excluded:
  tools/build/doc/src/hljs/styles/github.min.css
  libs/qvm/doc/zajo.css
  libs/config/configure
+ tools/build/src/engine/jamgram.cpp
+ tools/build/src/engine/jamgram.hpp
 
 Files: *
 Copyright: Boost project contributors
