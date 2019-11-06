@@ -41,8 +41,6 @@ Files-Excluded:
  */boost-no-inspect
  tools/build/src/engine/debian/*
  libs/outcome/doc/src/themes/boostdoc/*
- libs/beast/test/extern/zlib-1.2.11/contrib/*
- libs/beast/test/extern/zlib-1.2.11/doc/*
  doc/images/valid-html401.png
  libs/python/.ci/install.ps1
  tools/build/doc/src/hljs/styles/github.min.css
@@ -50,6 +48,8 @@ Files-Excluded:
  libs/config/configure
  tools/build/src/engine/jamgram.cpp
  tools/build/src/engine/jamgram.hpp
+ */zlib-1.2.11/*
+ */bzip2-1.0.6/*
 
 Files: *
 Copyright: Boost project contributors
