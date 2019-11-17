@@ -48,6 +48,7 @@ Files-Excluded:
  libs/config/configure
  tools/build/src/engine/jamgram.cpp
  tools/build/src/engine/jamgram.hpp
+ libs/python/include/boost/python/detail/python22_fixed.h
  */zlib-1.2.11/*
  */bzip2-1.0.6/*
 
