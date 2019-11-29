@@ -19,12 +19,12 @@ echo "build: OK"
 ls
 
 [ -x libdemo1.so ]
-python -c "import libdemo1 ; print(libdemo1.greet())"
+python3 -c "import libdemo1 ; print(libdemo1.greet())"
 
 echo "run: demo1 OK"
 
 [ -x libdemo2.so ]
-python -c "\
+python3 -c "\
 import libdemo2 ;\
 planet = libdemo2.World() ;\
 planet.set('howdy') ;\
