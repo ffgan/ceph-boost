@@ -31,6 +31,7 @@ Depends: libboost-graph1.67-dev, build-essential, cmake
 
 Tests: graph-parallel
 Depends: libboost-graph-parallel1.67-dev, libboost-mpi1.67-dev, libboost-system1.67-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Restrictions: allow-stderr
 
 Tests: iostreams
 Depends: libboost-iostreams1.67-dev, build-essential, cmake
@@ -46,9 +47,11 @@ Depends: libboost-math1.67-dev, build-essential, cmake
 
 Tests: mpi
 Depends: libboost-mpi1.67-dev, mpi-default-dev, build-essential, cmake
+Restrictions: allow-stderr
 
 Tests: mpi-python
 Depends: libboost-mpi-python1.67-dev, mpi-default-dev, python-minimal
+Restrictions: allow-stderr
 
 Tests: program-options
 Depends: libboost-program-options1.67-dev, build-essential, cmake
