@@ -50,14 +50,14 @@ Depends: libboost-mpi1.67-dev, mpi-default-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: mpi-python
-Depends: libboost-mpi-python1.67-dev, mpi-default-dev, python-minimal
+Depends: libboost-mpi-python1.67-dev, mpi-default-dev, python3-minimal
 Restrictions: allow-stderr
 
 Tests: program-options
 Depends: libboost-program-options1.67-dev, build-essential, cmake
 
 Tests: python
-Depends: libboost-python1.67-dev, python-minimal, cmake, build-essential, clang
+Depends: libboost-python1.67-dev, python3-minimal, cmake, build-essential, clang
 
 Tests: random
 Depends: libboost-random1.67-dev, build-essential, cmake
