@@ -1,3 +1,10 @@
+boost1.71 (1.71.0-2) UNRELEASED; urgency=medium
+
+  * Enable -context on riscv64 (closes: #947651). Thanks to Aurelien Jarno for
+    the patch.
+
+ -- Giovanni Mascellani <gio@debian.org>  Sun, 29 Dec 2019 08:46:35 +0100
+
 boost1.71 (1.71.0-1) unstable; urgency=medium
 
   [ Dimitri John Ledkov ]
