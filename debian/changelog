@@ -1,3 +1,9 @@
+boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
+
+  * Update autopkgtest dependencies to 1.71.
+
+ -- Giovanni Mascellani <gio@debian.org>  Tue, 31 Dec 2019 18:40:52 +0100
+
 boost1.71 (1.71.0-2) unstable; urgency=medium
 
   * Enable -context on riscv64 (closes: #947651). Thanks to Aurelien Jarno for
