@@ -1,6 +1,9 @@
 boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
 
   * Update autopkgtest dependencies to 1.71.
+  * Fix some missing dependencies between -dev packages, found thanks to
+    autopkgtest.
+  * Remove signals from autopkgtest.
 
  -- Giovanni Mascellani <gio@debian.org>  Tue, 31 Dec 2019 18:40:52 +0100
 

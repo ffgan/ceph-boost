@@ -68,9 +68,6 @@ Depends: libboost-regex1.71-dev, build-essential, cmake, html2text
 Tests: serialization
 Depends: libboost-serialization1.71-dev, libboost-random1.71-dev, build-essential, cmake
 
-Tests: signals
-Depends: libboost-signals1.71-dev, build-essential, cmake
-
 Tests: stacktrace
 Depends: libboost-stacktrace1.71-dev, libboost-system1.71-dev, build-essential, cmake
 

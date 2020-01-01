@@ -400,6 +400,7 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
+ libboost-thread1.71-dev (= ${binary:Version}),
  libboost-context1.71.0 (= ${binary:Version})
 Description: provides a sort of cooperative multitasking on a single thread
  This package forms part of the Boost C++ Libraries collection.
@@ -584,6 +585,7 @@ Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
  libboost-context1.71-dev (= ${binary:Version}),
+ libboost-filesystem1.71-dev (= ${binary:Version}),
  libboost-fiber1.71.0 (= ${binary:Version})
 Description: cooperatively-scheduled micro-/userland-threads
  This package forms part of the Boost C++ Libraries collection.
@@ -665,6 +667,7 @@ Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
  libboost-graph1.71.0 (= ${binary:Version}),
+ libboost-regex1.71-dev (= ${binary:Version}),
  libboost-serialization1.71-dev (= ${binary:Version}),
  libboost-test1.71-dev (= ${binary:Version})
 Conflicts: libboost-graph1.42-dev, libboost-graph1.46-dev, libboost-graph1.48-dev, libboost-graph1.49-dev, libboost-graph1.50-dev, libboost-graph1.52-dev, libboost-graph1.53-dev, libboost-graph1.54-dev, libboost-graph1.55-dev, libboost-graph1.57-dev, libboost-graph1.58-dev, libboost-graph1.60-dev, libboost-graph1.61-dev, libboost-graph1.62-dev, libboost-graph1.63-dev, libboost-graph1.65-dev, libboost-graph1.67-dev, libboost-graph1.70-dev
@@ -782,6 +785,7 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
+ libboost-thread1.71-dev (= ${binary:Version}),
  libboost-locale1.71.0 (= ${binary:Version})
 Conflicts: libboost-locale1.48-dev, libboost-locale1.49-dev, libboost-locale1.50-dev, libboost-locale1.52-dev, libboost-locale1.53-dev, libboost-locale1.54-dev, libboost-locale1.55-dev, libboost-locale1.57-dev, libboost-locale1.58-dev, libboost-locale1.60-dev, libboost-locale1.61-dev, libboost-locale1.62-dev, libboost-locale1.63-dev, libboost-locale1.65-dev, libboost-locale1.67-dev, libboost-locale1.70-dev
 Description: C++ facilities for localization
@@ -834,9 +838,11 @@ Section: libdevel
 Depends: ${misc:Depends},
  libboost-log1.71.0 (= ${binary:Version}),
  libboost1.71-dev (= ${binary:Version}),
+ libboost-atomic1.71-dev (= ${binary:Version}),
+ libboost-date-time1.71-dev (= ${binary:Version}),
  libboost-filesystem1.71-dev (= ${binary:Version}),
  libboost-system1.71-dev (= ${binary:Version}),
- libboost-date-time1.71-dev (= ${binary:Version}),
+ libboost-regex1.71-dev (= ${binary:Version}),
  libboost-thread1.71-dev (= ${binary:Version})
 Description: C++ logging library
  This package forms part of the Boost C++ Libraries collection.
@@ -1117,6 +1123,7 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
+ libboost-system1.71-dev (= ${binary:Version}),
  libboost-random1.71.0 (= ${binary:Version})
 Conflicts: libboost-random1.42-dev, libboost-random1.46-dev, libboost-random1.48-dev, libboost-random1.49-dev, libboost-random1.50-dev, libboost-random1.52-dev, libboost-random1.53-dev, libboost-random1.54-dev, libboost-random1.55-dev, libboost-random1.57-dev, libboost-random1.58-dev, libboost-random1.60-dev, libboost-random1.61-dev, libboost-random1.62-dev, libboost-random1.63-dev, libboost-random1.65-dev, libboost-random1.67-dev, libboost-random1.70-dev
 Description: Boost Random Number Library
@@ -1378,6 +1385,7 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
+ libboost-chrono1.71-dev (= ${binary:Version}),
  libboost-timer1.71.0 (= ${binary:Version})
 Conflicts: libboost-timer1.42-dev, libboost-timer1.46-dev, libboost-timer1.48-dev, libboost-timer1.49-dev, libboost-timer1.50-dev, libboost-timer1.52-dev, libboost-timer1.53-dev, libboost-timer1.54-dev, libboost-timer1.55-dev, libboost-timer1.57-dev, libboost-timer1.58-dev, libboost-timer1.60-dev, libboost-timer1.61-dev, libboost-timer1.62-dev, libboost-timer1.63-dev, libboost-timer1.65-dev, libboost-timer1.67-dev, libboost-timer1.70-dev
 Description: C++ wall clock and CPU process timers
@@ -1414,6 +1422,8 @@ Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
  libboost1.71-dev (= ${binary:Version}),
+ libboost-system1.71-dev (= ${binary:Version}),
+ libboost-thread1.71-dev (= ${binary:Version}),
  libboost-type-erasure1.71.0 (= ${binary:Version})
 Description: C++ runtime polymorphism based on concepts
  This package forms part of the Boost C++ Libraries collection.
