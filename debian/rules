@@ -169,7 +169,7 @@ BUILD_CONTEXT = yes
 else ifeq ($(DEB_BUILD_ARCH), s390)
 BUILD_CONTEXT = no
 else ifeq ($(DEB_BUILD_ARCH), s390x)
-BUILD_CONTEXT = no
+BUILD_CONTEXT = yes
 else ifeq ($(DEB_BUILD_ARCH), sh4)
 BUILD_LONG_DOUBLE = no
 BUILD_CONTEXT = no

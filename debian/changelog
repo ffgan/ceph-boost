@@ -1,9 +1,13 @@
 boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
 
+  [ Giovanni Mascellani ]
   * Update autopkgtest dependencies to 1.71.
   * Fix some missing dependencies between -dev packages, found thanks to
     autopkgtest.
   * Remove signals from autopkgtest.
+
+  [ Dimitri John Ledkov ]
+  * Cherrypick upstream patch to enable context on s390x. LP: #1694926
 
  -- Giovanni Mascellani <gio@debian.org>  Tue, 31 Dec 2019 18:40:52 +0100
 
