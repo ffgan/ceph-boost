@@ -1,4 +1,4 @@
-boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
+boost1.71 (1.71.0-3) unstable; urgency=medium
 
   [ Giovanni Mascellani ]
   * Update autopkgtest dependencies to 1.71.
@@ -10,7 +10,7 @@ boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
   [ Dimitri John Ledkov ]
   * Cherrypick upstream patch to enable context on s390x. LP: #1694926
 
- -- Giovanni Mascellani <gio@debian.org>  Tue, 31 Dec 2019 18:40:52 +0100
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:11:45 +0100
 
 boost1.71 (1.71.0-2) unstable; urgency=medium
 
