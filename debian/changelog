@@ -1,3 +1,9 @@
+boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
+
+  * Transition to the Salsa CI team pipeline.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:23:39 +0100
+
 boost1.71 (1.71.0-3) unstable; urgency=medium
 
   [ Giovanni Mascellani ]
