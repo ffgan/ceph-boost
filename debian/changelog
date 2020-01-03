@@ -5,6 +5,7 @@ boost1.71 (1.71.0-3) UNRELEASED; urgency=medium
   * Fix some missing dependencies between -dev packages, found thanks to
     autopkgtest.
   * Remove signals from autopkgtest.
+  * Cleanup Debian patches.
 
   [ Dimitri John Ledkov ]
   * Cherrypick upstream patch to enable context on s390x. LP: #1694926
