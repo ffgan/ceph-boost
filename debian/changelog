@@ -1,6 +1,7 @@
 boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
 
   * Transition to the Salsa CI team pipeline.
+  * Enable -context on mips64el (closes: #948015).
 
  -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:23:39 +0100
 
