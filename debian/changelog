@@ -1,7 +1,12 @@
 boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
 
+  [ Giovanni Mascellani ]
   * Transition to the Salsa CI team pipeline.
   * Enable -context on mips64el (closes: #948015).
+
+  [ Dimitri John Ledkov ]
+  * Add chrono to thread autopkgtest until
+    https://github.com/boostorg/boost_install/issues/27 is resolved.
 
  -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:23:39 +0100
 
