@@ -1,9 +1,16 @@
 boost1.71 (1.71.0-5) UNRELEASED; urgency=medium
 
+  [ Dimitri John Ledkov ]
   * Cherrypick further patches to document and optimize context on
     s390x. LP: #1859941
   * Simplify debian/rules slightly, by dropping resetting the default
     values.
+
+  [ Giovanni Mascellani ]
+  * Expose Python version information in dependencies to Python packages, so
+    that removing a supported Python version does not result in silently
+    broken reverse dependencies (closes: #948273). Thanks to Andreas Beckmann
+    for the patch.
 
  -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 29 Jan 2020 23:16:31 +0000
 
