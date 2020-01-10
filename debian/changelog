@@ -1,4 +1,4 @@
-boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
+boost1.71 (1.71.0-4) unstable; urgency=medium
 
   [ Giovanni Mascellani ]
   * Transition to the Salsa CI team pipeline.
@@ -12,7 +12,7 @@ boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
   * Add chrono to thread autopkgtest until
     https://github.com/boostorg/boost_install/issues/27 is resolved.
 
- -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:23:39 +0100
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 10 Jan 2020 14:26:58 +0100
 
 boost1.71 (1.71.0-3) unstable; urgency=medium
 
