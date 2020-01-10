@@ -5,6 +5,8 @@ boost1.71 (1.71.0-4) UNRELEASED; urgency=medium
   * Enable -context on mips64el (closes: #948015).
   * Set graph-parallel test as flaky until
     https://github.com/boostorg/graph_parallel/issues/21 is resolved.
+  * Compile test context/demo1.cpp only on amd64, because it uses some
+    architecture specific instructions.
 
   [ Dimitri John Ledkov ]
   * Add chrono to thread autopkgtest until
