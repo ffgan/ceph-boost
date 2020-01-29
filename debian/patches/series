@@ -13,3 +13,5 @@ fix_linux_detection.patch
 fix-mpi-python-compilation.patch
 fix-riscv64-non-pic.patch
 context-s390x.patch
+36a81359f0af5607872d20d4fdc94e9bccdd0911.patch
+b90917eaedf5ef977dea8ab0f11a92e3e09a4cbb.patch
