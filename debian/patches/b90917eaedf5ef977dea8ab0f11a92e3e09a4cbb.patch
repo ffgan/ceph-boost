@@ -4,15 +4,15 @@ Date: Fri, 20 Sep 2019 13:23:19 -0400
 Subject: [PATCH] Optimize s390x instructions
 
 ---
- src/asm/jump_s390x_sysv_elf_gas.S  | 84 ++++++++++--------------------
- src/asm/make_s390x_sysv_elf_gas.S  | 27 ++++++----
- src/asm/ontop_s390x_sysv_elf_gas.S | 81 +++++++++-------------------
+ libs/context/src/asm/jump_s390x_sysv_elf_gas.S  | 84 ++++++++++--------------------
+ libs/context/src/asm/make_s390x_sysv_elf_gas.S  | 27 ++++++----
+ libs/context/src/asm/ontop_s390x_sysv_elf_gas.S | 81 +++++++++-------------------
  3 files changed, 70 insertions(+), 122 deletions(-)
 
-diff --git a/src/asm/jump_s390x_sysv_elf_gas.S b/src/asm/jump_s390x_sysv_elf_gas.S
+diff --git a/libs/context/src/asm/jump_s390x_sysv_elf_gas.S b/libs/context/src/asm/jump_s390x_sysv_elf_gas.S
 index c011d53b..b2163ccb 100644
---- a/src/asm/jump_s390x_sysv_elf_gas.S
-+++ b/src/asm/jump_s390x_sysv_elf_gas.S
+--- a/libs/context/src/asm/jump_s390x_sysv_elf_gas.S
++++ b/libs/context/src/asm/jump_s390x_sysv_elf_gas.S
 @@ -36,47 +36,34 @@
  .global jump_fcontext
  .type   jump_fcontext, @function
@@ -144,10 +144,10 @@ index c011d53b..b2163ccb 100644
  
  .size   jump_fcontext,.-jump_fcontext
  # Mark that we don't need executable stack.
-diff --git a/src/asm/make_s390x_sysv_elf_gas.S b/src/asm/make_s390x_sysv_elf_gas.S
+diff --git a/libs/context/src/asm/make_s390x_sysv_elf_gas.S b/libs/context/src/asm/make_s390x_sysv_elf_gas.S
 index f5665338..d02856ca 100644
---- a/src/asm/make_s390x_sysv_elf_gas.S
-+++ b/src/asm/make_s390x_sysv_elf_gas.S
+--- a/libs/context/src/asm/make_s390x_sysv_elf_gas.S
++++ b/libs/context/src/asm/make_s390x_sysv_elf_gas.S
 @@ -36,6 +36,14 @@
  .global make_fcontext
  .type 	 make_fcontext, @function
@@ -213,10 +213,10 @@ index f5665338..d02856ca 100644
  
  .size   make_fcontext,.-make_fcontext
  # Mark that we don't need executable stack.
-diff --git a/src/asm/ontop_s390x_sysv_elf_gas.S b/src/asm/ontop_s390x_sysv_elf_gas.S
+diff --git a/libs/context/src/asm/ontop_s390x_sysv_elf_gas.S b/libs/context/src/asm/ontop_s390x_sysv_elf_gas.S
 index 7ab2cf5f..4488654e 100644
---- a/src/asm/ontop_s390x_sysv_elf_gas.S
-+++ b/src/asm/ontop_s390x_sysv_elf_gas.S
+--- a/libs/context/src/asm/ontop_s390x_sysv_elf_gas.S
++++ b/libs/context/src/asm/ontop_s390x_sysv_elf_gas.S
 @@ -36,47 +36,32 @@
  .global ontop_fcontext
  .type   ontop_fcontext, @function
