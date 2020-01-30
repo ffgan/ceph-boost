@@ -1,4 +1,4 @@
-boost1.71 (1.71.0-5) UNRELEASED; urgency=medium
+boost1.71 (1.71.0-5) unstable; urgency=medium
 
   [ Dimitri John Ledkov ]
   * Cherrypick further patches to document and optimize context on
@@ -13,7 +13,7 @@ boost1.71 (1.71.0-5) UNRELEASED; urgency=medium
     broken reverse dependencies (closes: #948273). Thanks to Andreas Beckmann
     for the patch.
 
- -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 29 Jan 2020 23:16:31 +0000
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 30 Jan 2020 15:50:23 +0000
 
 boost1.71 (1.71.0-4) unstable; urgency=medium
 
