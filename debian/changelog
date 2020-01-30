@@ -5,6 +5,7 @@ boost1.71 (1.71.0-5) UNRELEASED; urgency=medium
     s390x. LP: #1859941
   * Simplify debian/rules slightly, by dropping resetting the default
     values.
+  * Skip building numpy on Ubuntu:i386.
 
   [ Giovanni Mascellani ]
   * Expose Python version information in dependencies to Python packages, so
