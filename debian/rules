@@ -31,8 +31,7 @@ boost_suffixes_mpi-python := $(pyverids)
 filtered_files =
 
 DPKG_EXPORT_BUILDFLAGS = 1
-include /usr/share/dpkg/buildflags.mk
-include /usr/share/dpkg/architecture.mk
+include /usr/share/dpkg/default.mk
 
 # set the number of build jobs
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
@@ -130,8 +129,6 @@ TOOLSET_CONFIG = 'using gcc : : : <compileflags>"$(CPPFLAGS)" <cflags>"$(CFLAGS)
 BUILD_CONTEXT = yes
 BUILD_LONG_DOUBLE = yes
 
-DEB_BUILD_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
-
 ifeq ($(DEB_BUILD_ARCH), alpha)
 BUILD_CONTEXT = no
 else ifeq ($(DEB_BUILD_ARCH), arm)
@@ -156,20 +153,10 @@ else ifeq ($(DEB_BUILD_ARCH), mipsel)
 BUILD_LONG_DOUBLE = no
 else ifeq ($(DEB_BUILD_ARCH), mips64)
 BUILD_CONTEXT = no
-else ifeq ($(DEB_BUILD_ARCH), mips64el)
-BUILD_CONTEXT = yes
 else ifeq ($(DEB_BUILD_ARCH), powerpcspe)
 BUILD_CONTEXT = no
-else ifeq ($(DEB_BUILD_ARCH), ppc64)
-BUILD_CONTEXT = yes
-else ifeq ($(DEB_BUILD_ARCH), ppc64el)
-BUILD_CONTEXT = yes
-else ifeq ($(DEB_BUILD_ARCH), riscv64)
-BUILD_CONTEXT = yes
 else ifeq ($(DEB_BUILD_ARCH), s390)
 BUILD_CONTEXT = no
-else ifeq ($(DEB_BUILD_ARCH), s390x)
-BUILD_CONTEXT = yes
 else ifeq ($(DEB_BUILD_ARCH), sh4)
 BUILD_LONG_DOUBLE = no
 BUILD_CONTEXT = no
