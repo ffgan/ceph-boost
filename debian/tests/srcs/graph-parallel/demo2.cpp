@@ -1,100 +1,79 @@
-// https://www.boost.org/doc/libs/1_67_0/libs/graph-parallel/example/dijkstra_shortest_paths.cpp
+// https://www.boost.org/doc/libs/1_72_0/libs/graph/example/dijkstra-example.cpp
 
-// Copyright (C) 2004-2006 The Trustees of Indiana University.
-
-// Use, modification and distribution is subject to the Boost Software
-// License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
+//=======================================================================
+// Copyright 2001 Jeremy G. Siek, Andrew Lumsdaine, Lie-Quan Lee,
+//
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
-
-//  Authors: Douglas Gregor
-//           Andrew Lumsdaine
-
-// Example usage of dijkstra_shortest_paths algorithm
-
-// Enable PBGL interfaces to BGL algorithms
-#include <boost/graph/use_mpi.hpp>
-
-// Communication via MPI
-#include <boost/graph/distributed/mpi_process_group.hpp>
-
-// Dijkstra's single-source shortest paths algorithm
-#include <boost/graph/dijkstra_shortest_paths.hpp>
-
-// Distributed adjacency list
-#include <boost/graph/distributed/adjacency_list.hpp>
-
-// METIS Input
-#include <boost/graph/metis.hpp>
-
-// Graphviz Output
-#include <boost/graph/distributed/graphviz.hpp>
-
-// Standard Library includes
+//=======================================================================
+#include <boost/config.hpp>
+#include <iostream>
 #include <fstream>
-#include <string>
 
-#ifdef BOOST_NO_EXCEPTIONS
-void boost::throw_exception(std::exception const &ex)
-{
-  std::cout << ex.what() << std::endl;
-  abort();
-}
-#endif
+#include <boost/graph/graph_traits.hpp>
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/dijkstra_shortest_paths.hpp>
+#include <boost/property_map/property_map.hpp>
 
 using namespace boost;
-using boost::graph::distributed::mpi_process_group;
 
-/* An undirected, weighted graph with distance values stored on the
-   vertices. */
-typedef adjacency_list<vecS, distributedS<mpi_process_group, vecS>, undirectedS,
-                       /*Vertex properties=*/property<vertex_distance_t, float>,
-                       /*Edge properties=*/property<edge_weight_t, float>>
-    Graph;
-
-int main(int argc, char *argv[])
+int
+main(int, char *[])
 {
-  boost::mpi::environment env(argc, argv);
+  typedef adjacency_list < listS, vecS, directedS,
+    no_property, property < edge_weight_t, int > > graph_t;
+  typedef graph_traits < graph_t >::vertex_descriptor vertex_descriptor;
+  typedef std::pair<int, int> Edge;
 
-  // Parse command-line options
-  const char *filename = "weighted_graph.gr";
-  if (argc > 1)
-    filename = argv[1];
+  const int num_nodes = 5;
+  enum nodes { A, B, C, D, E };
+  char name[] = "ABCDE";
+  Edge edge_array[] = { Edge(A, C), Edge(B, B), Edge(B, D), Edge(B, E),
+    Edge(C, B), Edge(C, D), Edge(D, E), Edge(E, A), Edge(E, B)
+  };
+  int weights[] = { 1, 2, 1, 2, 7, 3, 1, 1, 1 };
+  int num_arcs = sizeof(edge_array) / sizeof(Edge);
+  graph_t g(edge_array, edge_array + num_arcs, weights, num_nodes);
+  property_map<graph_t, edge_weight_t>::type weightmap = get(edge_weight, g);
+  std::vector<vertex_descriptor> p(num_vertices(g));
+  std::vector<int> d(num_vertices(g));
+  vertex_descriptor s = vertex(A, g);
 
-  // Open the METIS input file
-  std::ifstream in(filename);
-  graph::metis_reader reader(in);
+  dijkstra_shortest_paths(g, s,
+                          predecessor_map(boost::make_iterator_property_map(p.begin(), get(boost::vertex_index, g))).
+                          distance_map(boost::make_iterator_property_map(d.begin(), get(boost::vertex_index, g))));
 
-  // Load the graph using the default distribution
-  Graph g(reader.begin(), reader.end(), reader.weight_begin(),
-          reader.num_vertices());
-
-  // Get vertex 0 in the graph
-  graph_traits<Graph>::vertex_descriptor start = vertex(0, g);
-
-  // Compute shortest paths from vertex 0
-  dijkstra_shortest_paths(g, start, distance_map(get(vertex_distance, g)));
-
-  // Output a Graphviz DOT file
-  std::string outfile = filename;
-  if (argc > 2)
-    outfile = argv[2];
-  else
-  {
-    size_t i = outfile.rfind('.');
-    if (i != std::string::npos)
-      outfile.erase(outfile.begin() + i, outfile.end());
-    outfile += "-dijkstra.dot";
+  std::cout << "distances and parents:" << std::endl;
+  graph_traits < graph_t >::vertex_iterator vi, vend;
+  for (boost::tie(vi, vend) = vertices(g); vi != vend; ++vi) {
+    std::cout << "distance(" << name[*vi] << ") = " << d[*vi] << ", ";
+    std::cout << "parent(" << name[*vi] << ") = " << name[p[*vi]] << std::
+      endl;
   }
+  std::cout << std::endl;
 
-  if (process_id(process_group(g)) == 0)
-  {
-    std::cout << "Writing GraphViz output to " << outfile << "... ";
-    std::cout.flush();
+  std::ofstream dot_file("figs/dijkstra-eg.dot");
+
+  dot_file << "digraph D {\n"
+    << "  rankdir=LR\n"
+    << "  size=\"4,3\"\n"
+    << "  ratio=\"fill\"\n"
+    << "  edge[style=\"bold\"]\n" << "  node[shape=\"circle\"]\n";
+
+  graph_traits < graph_t >::edge_iterator ei, ei_end;
+  for (boost::tie(ei, ei_end) = edges(g); ei != ei_end; ++ei) {
+    graph_traits < graph_t >::edge_descriptor e = *ei;
+    graph_traits < graph_t >::vertex_descriptor
+      u = source(e, g), v = target(e, g);
+    dot_file << name[u] << " -> " << name[v]
+      << "[label=\"" << get(weightmap, e) << "\"";
+    if (p[v] == u)
+      dot_file << ", color=\"black\"";
+    else
+      dot_file << ", color=\"grey\"";
+    dot_file << "]";
   }
-  write_graphviz(outfile, g, make_label_writer(get(vertex_distance, g)),
-                 make_label_writer(get(edge_weight, g)));
-  if (process_id(process_group(g)) == 0)
-    std::cout << "Done." << std::endl;
-
-  return 0;
+  dot_file << "}";
+  return EXIT_SUCCESS;
 }

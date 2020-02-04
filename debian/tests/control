@@ -29,10 +29,9 @@ Depends: libboost-filesystem1.71-dev, build-essential, cmake
 Tests: graph
 Depends: libboost-graph1.71-dev, build-essential, cmake
 
-# Flaky because this currently suffers of upstream bug https://github.com/boostorg/graph_parallel/issues/21
 Tests: graph-parallel
 Depends: libboost-graph-parallel1.71-dev, libboost-mpi1.71-dev, libboost-system1.71-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
-Restrictions: allow-stderr, flaky
+Restrictions: allow-stderr
 
 Tests: iostreams
 Depends: libboost-iostreams1.71-dev, build-essential, cmake
