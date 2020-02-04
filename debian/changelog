@@ -1,3 +1,11 @@
+boost1.71 (1.71.0-6) unstable; urgency=medium
+
+  * [ef8987f] Fix python autopkgtest. (closes: #950688)
+  * [aad42c4] Trim trailing whitespace.
+  * [5b9edee] Fix failing autopkgtest graph-parallel
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 04 Feb 2020 22:10:35 +0100
+
 boost1.71 (1.71.0-5) unstable; urgency=medium
 
   [ Dimitri John Ledkov ]
