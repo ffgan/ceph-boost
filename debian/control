@@ -3,7 +3,7 @@ Homepage: https://www.boost.org/
 Section: libs
 Priority: optional
 Maintainer: Debian Boost Team <team+boost@tracker.debian.org>
-Uploaders: 
+Uploaders:
  Steve M. Robbins <smr@debian.org>,
  Giovanni Mascellani <gio@debian.org>,
  Anton Gladky <gladk@debian.org>
