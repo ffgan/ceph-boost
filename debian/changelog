@@ -1,7 +1,7 @@
 boost1.71 (1.71.0-7) UNRELEASED; urgency=medium
 
   * Do not install stacktrace_backtrace on m68k, where it is not built
-    (closes: #962072).
+    (closes: #962072). Thanks to Adrian Glaubitz for the patch.
   * Fix broken macOS detection, conflicting with GNU/Hurd
     (closes: #960090). Thanks to Pino Toscano for the patch.
 
