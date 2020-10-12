@@ -242,7 +242,7 @@ Copyright:
 License: BSL-1.0
 
 Files:
- libs/spirit/repository/*
+ libs/spirit/*
 Copyright:
  Dan Nuffer
  Hartmut Kaiser
@@ -250,7 +250,7 @@ Copyright:
 License: BSL-1.0
 
 Files:
- libs/spirit/*
+ libs/spirit/repository/*
 Copyright:
  Dan Nuffer
  Hartmut Kaiser
