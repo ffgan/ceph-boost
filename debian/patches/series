@@ -4,17 +4,8 @@ ppc64el-fp_traits-ibm-long-double.patch
 no-gcc-m-options.diff
 no-gcc-march-options.patch
 make-docs-use-offline-resources-only.patch
-fix-examples.patch
 disable-remote-links.patch
 fix-mpi-python37.patch
 0001-Add-PEP-3149-compliant-extension-suffix-discovery.patch
 boostorg-program_options-pull-59.patch
 fix_linux_detection.patch
-fix-mpi-python-compilation.patch
-fix-riscv64-non-pic.patch
-context-s390x.patch
-36a81359f0af5607872d20d4fdc94e9bccdd0911.patch
-b90917eaedf5ef977dea8ab0f11a92e3e09a4cbb.patch
-s390x-arch.patch
-e0ba57928d681c9f8e0b28eef2a17973950b9e8b.patch
-92e1131fb00c5fd16911ea98777b872dbd0181b1.patch

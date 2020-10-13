@@ -52,16 +52,3 @@ index 892427d..d22fd69 100644
              // These have extra fields to specify timezone
              if(gmtoff!=0) {
                  // bsd and apple want tm_zone be non-const
-diff --git a/include/boost/test/impl/debug.ipp b/include/boost/test/impl/debug.ipp
-index a5e5f6da..fe34bd16 100644
---- a/libs/test/include/boost/test/impl/debug.ipp
-+++ b/libs/test/include/boost/test/impl/debug.ipp
-@@ -83,7 +83,7 @@ namespace std { using ::memset; using ::sprintf; }
- 
- #    include <procfs.h>
- 
--#  elif defined(linux) || defined(__linux)
-+#  elif defined(linux) || defined(__linux__)
- 
- #    define BOOST_LINUX_BASED_DEBUG
- 
