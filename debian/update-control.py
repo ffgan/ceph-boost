@@ -44,7 +44,7 @@ def updateVersionedValue(paragraph, key):
 
 def conflictsWithPrevious(paragraph):
     if 'Conflicts' not in paragraph: return False
-    nameRe = re.sub('\d', '\\d', paragraph['Package'])
+    nameRe = re.sub('\\d', '\\\\d', paragraph['Package'])
     return re.search(nameRe, paragraph['Conflicts']) is not None
 
 def updateConflicts(paragraph, oldPkgName):
@@ -85,6 +85,6 @@ def processControl():
 
 
 
-gOldVersion = BoostVersion('1.70.0')
-gNewVersion = BoostVersion('1.71.0')
+gOldVersion = BoostVersion('1.71.0')
+gNewVersion = BoostVersion('1.74.0')
 processControl()
