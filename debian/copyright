@@ -44,13 +44,13 @@ Files-Excluded:
  doc/images/valid-html401.png
  libs/python/.ci/install.ps1
  tools/build/doc/src/hljs/styles/github.min.css
- libs/qvm/doc/zajo.css
+ libs/qvm/doc/zajo-*.css
  libs/config/configure
  tools/build/src/engine/jamgram.cpp
  tools/build/src/engine/jamgram.hpp
  libs/python/include/boost/python/detail/python22_fixed.h
  */zlib-1.2.11/*
- */bzip2-1.0.6/*
+ */bzip2-1.0.8/*
 
 Files: *
 Copyright: Boost project contributors
