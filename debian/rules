@@ -277,7 +277,7 @@ override_dh_install-arch: override_dh_install-common
 			install --with-python --with-mpi python=$$pyver; \
 	done
 
-	find debian/tmp/usr/include debian/tmp/usr/share/boost-build -type f | xargs chmod 644
+	find debian/tmp/usr/include debian/tmp/usr/share/boost-build -type f -print0 | xargs -0 chmod 644
 	find debian/tmp -name .cvsignore | xargs rm -f
 	find debian -empty -type f | xargs rm -f
 
