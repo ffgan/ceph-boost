@@ -1,3 +1,10 @@
+boost1.74 (1.74.0-1) UNRELEASED; urgency=medium
+
+  * New upstream version.
+  * NOT READY FOR RELEASE: debian/copyright must be fixed.
+
+ -- Giovanni Mascellani <gio@debian.org>  Tue, 13 Oct 2020 08:16:11 +0200
+
 boost1.71 (1.71.0-7) unstable; urgency=medium
 
   * Do not install stacktrace_backtrace on m68k, where it is not built
