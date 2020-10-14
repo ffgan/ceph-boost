@@ -7,7 +7,7 @@ DEB_BUILD_MAINT_OPTIONS = hardening=+all
 # coroutine, and fiber depend on context, so they are also conditionally compiled
 boost_libs := atomic chrono container contract date-time exception filesystem	\
               graph graph-parallel iostreams locale log math mpi	\
-              mpi-python program-options python random regex	\
+              mpi-python nowide program-options python random regex	\
               serialization stacktrace system test thread timer \
               type-erasure wave
 

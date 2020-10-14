@@ -983,6 +983,42 @@ Description: C++ interface to the Message Passing Interface (MPI), Python Bindin
  .
  This package provides Python Bindings to the C++ interface.
 
+Package: libboost-nowide1.74.0
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: python3
+Provides: ${boost:Provides}
+Description: Standard library functions with UTF-8 API on Windows
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The library provides an implementation of standard C and C++
+ library functions which are UTF-8 aware on Windows without
+ requiring to use the Wipe API.
+ .
+ On POSIX platforms, where UTF-8 is already commonly used, the
+ calls in Nowide just alias to their standard counterparts.
+
+Package: libboost-nowide1.74-dev
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+ libboost-nowide1.74.0 (= ${binary:Version})
+Suggests: libboost1.74-doc
+Description: Boost.Python NumPy extensions development files
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The library provides an implementation of standard C and C++
+ library functions which are UTF-8 aware on Windows without
+ requiring to use the Wipe API.
+ .
+ On POSIX platforms, where UTF-8 is already commonly used, the
+ calls in Nowide just alias to their standard counterparts.
+Conflicts: libboost-numpy1.65-dev, libboost-numpy1.67-dev, libboost-numpy1.70-dev, libboost-numpy1.71-dev
+
 Package: libboost-numpy1.74.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
