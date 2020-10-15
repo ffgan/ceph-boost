@@ -2,8 +2,8 @@ boost1.74 (1.74.0-1) UNRELEASED; urgency=medium
 
   * New upstream version.
     + Update Debian patches.
+    + Update debian/copyright.
   * Fix little bugs in debian/rules.
-  * NOT READY FOR RELEASE: debian/copyright must be fixed.
 
  -- Giovanni Mascellani <gio@debian.org>  Tue, 13 Oct 2020 08:16:11 +0200
 
