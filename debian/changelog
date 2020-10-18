@@ -1,11 +1,11 @@
-boost1.74 (1.74.0-1) UNRELEASED; urgency=medium
+boost1.74 (1.74.0-1) unstable; urgency=medium
 
   * New upstream version.
     + Update Debian patches.
     + Update debian/copyright.
   * Fix little bugs in debian/rules.
 
- -- Giovanni Mascellani <gio@debian.org>  Tue, 13 Oct 2020 08:16:11 +0200
+ -- Giovanni Mascellani <gio@debian.org>  Sun, 18 Oct 2020 20:13:31 +0200
 
 boost1.71 (1.71.0-7) unstable; urgency=medium
 
