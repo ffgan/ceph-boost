@@ -9,3 +9,4 @@ fix-mpi-python37.patch
 0001-Add-PEP-3149-compliant-extension-suffix-discovery.patch
 boostorg-program_options-pull-59.patch
 fix_linux_detection.patch
+remove_deprecated_headers.patch
