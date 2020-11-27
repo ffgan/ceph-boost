@@ -166,7 +166,6 @@ Package: libboost-atomic1.74.0
 Homepage: http://www.boost.org/libs/atomic/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: atomic data types, operations, and memory ordering constraints
@@ -218,7 +217,6 @@ Package: libboost-chrono1.74.0
 Homepage: http://www.boost.org/libs/chrono/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ representation of time duration, time point, and clocks
@@ -309,7 +307,6 @@ Package: libboost-container1.74.0
 Homepage: http://boost.org/libs/container/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ library that implements several well-known containers
@@ -379,7 +376,6 @@ Package: libboost-context1.74.0
 Homepage: http://www.boost.org/libs/context/
 Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: provides a sort of cooperative multitasking on a single thread
@@ -422,7 +418,6 @@ Package: libboost-contract1.74.0
 Homepage: http://boost.org/libs/contract/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Contract library for C++
@@ -456,7 +451,6 @@ Package: libboost-coroutine1.74.0
 Homepage: http://www.boost.org/libs/coroutine/
 Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: provides a sort of cooperative multitasking on a single thread
@@ -509,7 +503,6 @@ Package: libboost-date-time1.74.0
 Homepage: http://www.boost.org/libs/date_time/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: set of date-time libraries based on generic programming concepts
@@ -553,7 +546,6 @@ Package: libboost-fiber1.74.0
 Homepage: http://www.boost.org/libs/fiber/
 Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: cooperatively-scheduled micro-/userland-threads
@@ -617,7 +609,6 @@ Package: libboost-filesystem1.74.0
 Homepage: http://boost.org/libs/filesystem/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: filesystem operations (portable paths, iteration over directories, etc) in C++
@@ -648,7 +639,6 @@ Package: libboost-graph1.74.0
 Homepage: http://www.boost.org/libs/graph/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: graphviz
@@ -685,7 +675,6 @@ Description: generic graph components and algorithms in C++
 Package: libboost-graph-parallel1.74.0
 Homepage: http://www.boost.org/libs/graph_parallel/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: graphviz
@@ -723,7 +712,6 @@ Package: libboost-iostreams1.74.0
 Homepage: http://www.boost.org/libs/iostreams/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost.Iostreams Library
@@ -754,7 +742,6 @@ Package: libboost-locale1.74.0
 Homepage: http://www.boost.org/libs/locale/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ facilities for localization
@@ -816,7 +803,6 @@ Description: C++ facilities for localization
 Package: libboost-log1.74.0
 Homepage: http://www.boost.org/libs/log/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ logging library
  This package forms part of the Boost C++ Libraries collection.
@@ -866,7 +852,6 @@ Package: libboost-math1.74.0
 Homepage: http://www.boost.org/libs/math/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost.Math Library
@@ -909,7 +894,6 @@ Description: Boost.Math Library development files
 Package: libboost-mpi1.74.0
 Homepage: http://www.boost.org/doc/html/mpi.html
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ interface to the Message Passing Interface (MPI)
@@ -944,7 +928,6 @@ Description: C++ interface to the Message Passing Interface (MPI)
 Package: libboost-mpi-python1.74.0
 Homepage: http://www.boost.org/doc/html/mpi/python.html
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}, mpi-default-bin
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: python3
@@ -988,7 +971,6 @@ Description: C++ interface to the Message Passing Interface (MPI), Python Bindin
 Package: libboost-nowide1.74.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: python3
@@ -1024,7 +1006,6 @@ Conflicts: libboost-numpy1.65-dev, libboost-numpy1.67-dev, libboost-numpy1.70-de
 Package: libboost-numpy1.74.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: python3
@@ -1060,7 +1041,6 @@ Package: libboost-program-options1.74.0
 Homepage: http://www.boost.org/libs/program_options/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: program options library for C++
@@ -1089,7 +1069,6 @@ Description: program options library for C++
 Package: libboost-python1.74.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: python3
@@ -1144,7 +1123,6 @@ Package: libboost-random1.74.0
 Homepage: http://www.boost.org/libs/random/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost Random Number Library
@@ -1175,7 +1153,6 @@ Package: libboost-regex1.74.0
 Homepage: http://www.boost.org/libs/regex/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Provides: ${boost:Provides}
@@ -1221,7 +1198,6 @@ Package: libboost-serialization1.74.0
 Homepage: http://www.boost.org/libs/serialization/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: serialization library for C++
@@ -1267,7 +1243,6 @@ Package: libboost-stacktrace1.74.0
 Homepage: http://boost.org/libs/stacktrace/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: library to capture and print stack traces
@@ -1295,7 +1270,6 @@ Package: libboost-system1.74.0
 Homepage: http://www.boost.org/libs/system/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Operating system (e.g. diagnostics support) library
@@ -1333,7 +1307,6 @@ Package: libboost-test1.74.0
 Homepage: http://www.boost.org/libs/test/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: components for writing and executing test suites
@@ -1365,7 +1338,6 @@ Package: libboost-thread1.74.0
 Homepage: http://www.boost.org/libs/thread/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: portable C++ multi-threading
@@ -1401,7 +1373,6 @@ Package: libboost-timer1.74.0
 Homepage: http://www.boost.org/libs/timer/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ wall clock and CPU process timers
@@ -1442,7 +1413,6 @@ Package: libboost-type-erasure1.74.0
 Homepage: http://www.boost.org/doc/libs/1_60_0/doc/html/boost_typeerasure.html
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ runtime polymorphism based on concepts
@@ -1476,7 +1446,6 @@ Package: libboost-wave1.74.0
 Homepage: http://www.boost.org/libs/wave/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C99/C++ preprocessor library
