@@ -1,3 +1,16 @@
+boost1.74 (1.74.0-3) unstable; urgency=medium
+
+  * [b66a37a] Install b2. (Closes: #975446)
+  * [508a668] Bump debhelper from old 10 to 12.
+    + debian/rules: Rely on default use of dh_missing rather
+      than using dh_install --list-missing.
+  * [97c2bd1] Set debhelper-compat version in Build-Depends.
+  * [e26eec0] Remove listed license files
+  * [51d69a5] Drop transition for old debug package migration.
+  * [076941c] Remove Section on some libs  hat duplicate source.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 27 Nov 2020 20:37:42 +0100
+
 boost1.74 (1.74.0-2) unstable; urgency=medium
 
   * [a634d58] Add libboost-nowide1.74-dev into libboost1.74-dev.
