@@ -19945,12 +19945,6 @@ Copyright:
 License: BSL-1.0
 
 Files:
- libs/yap/example/autodiff_library/LICENSE
-Copyright:
- 2014 Feng Qiang
-License: MIT
-
-Files:
  libs/utility/include/boost/utility/compare_pointees.hpp
  libs/utility/test/value_init_test_fail1.cpp
  libs/utility/test/value_init_test_fail2.cpp
@@ -44467,13 +44461,6 @@ Copyright:
 License: BSL-1.0
 
 Files:
- tools/boostbook/xsl/caramel/LICENSE
-Copyright:
- 2002-2003 Trustees of Indiana University
- 2000-2001 University of Notre Dame
-License: Caramel
-
-Files:
  libs/graph/include/boost/graph/kruskal_min_spanning_tree.hpp
  libs/graph/include/boost/graph/detail/edge.hpp
  libs/graph/include/boost/graph/detail/array_binary_tree.hpp
@@ -46720,4 +46707,3 @@ License: Zlib
     must not be misrepresented as being the original software.
  3. This notice may not be removed or altered from any source
     distribution.
-
