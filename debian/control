@@ -992,7 +992,7 @@ Section: libdevel
 Depends: ${misc:Depends},
  libboost-nowide1.74.0 (= ${binary:Version})
 Suggests: libboost1.74-doc
-Description: Boost.Python NumPy extensions development files
+Description: Standard library functions with UTF-8 API on Windows development files
  This package forms part of the Boost C++ Libraries collection.
  .
  The library provides an implementation of standard C and C++
