@@ -1,3 +1,11 @@
+boost1.74 (1.74.0-4) unstable; urgency=medium
+
+  * [283f917] Fix description for nowide-library
+  * [fa3c8ab] Add Breaks+Replaces: libleatherman-dev (<< 1.12.1+dfsg-1.1~)
+              to libbost1.74-dev. (Closes: #977310)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 13 Dec 2020 22:55:30 +0100
+
 boost1.74 (1.74.0-3) unstable; urgency=medium
 
   * [b66a37a] Install b2. (Closes: #975446)
