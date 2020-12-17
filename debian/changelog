@@ -1,3 +1,13 @@
+boost1.74 (1.74.0-5) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * [6a1ba93] Add a way to identify GNU/Hurd with b2. (Closes: #977414)
+
+  [ Anton Gladky ]
+  * [9569ec1] Update watch file format version to 4.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 17 Dec 2020 21:24:03 +0100
+
 boost1.74 (1.74.0-4) unstable; urgency=medium
 
   * [283f917] Fix description for nowide-library
