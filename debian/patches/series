@@ -11,3 +11,4 @@ boostorg-program_options-pull-59.patch
 fix_linux_detection.patch
 remove_deprecated_headers.patch
 fix_path_to_botstrap.patch
+fix_ftbfs_hurdi386.patch
