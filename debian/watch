@@ -1,2 +1,2 @@
-version=3
-opts="uversionmangle=s/_/./g,dversionmangle=s/\+dfsg$//" https://dl.bintray.com/boostorg/release/([\d.]*)/source/boost_([\d_]*)\.tar.bz2
+version=4
+opts=uversionmangle=s/_/./g,dversionmangle=s/\+dfsg$//  https://dl.bintray.com/boostorg/release/([\d.]*)/source boost_([\d_]*)\.tar.bz2
