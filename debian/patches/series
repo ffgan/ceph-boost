@@ -12,3 +12,4 @@ fix_linux_detection.patch
 remove_deprecated_headers.patch
 fix_path_to_botstrap.patch
 fix_ftbfs_hurdi386.patch
+fix_mipsel_asm_files.patch
