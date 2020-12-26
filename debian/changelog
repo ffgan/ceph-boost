@@ -1,3 +1,9 @@
+boost1.74 (1.74.0-6) unstable; urgency=medium
+
+  * [25520d6] Fix detection of ASM-files for mipsel. (Closes: #977921)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 26 Dec 2020 15:18:55 +0100
+
 boost1.74 (1.74.0-5) unstable; urgency=medium
 
   [ Pino Toscano ]
