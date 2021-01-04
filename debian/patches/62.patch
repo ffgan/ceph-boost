@@ -1,0 +1,42 @@
+From 01767287adc79ccc47c432f720ec58c5b240b434 Mon Sep 17 00:00:00 2001
+From: Dimitri John Ledkov <xnox@ubuntu.com>
+Date: Sun, 13 Dec 2020 14:28:04 +0000
+Subject: [PATCH] Fix ptree_serialization failing to build with boost1.74.
+
+---
+ include/boost/property_tree/ptree_serialization.hpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/include/boost/property_tree/ptree_serialization.hpp b/include/boost/property_tree/ptree_serialization.hpp
+index a8181ca3b..d856a0603 100644
+--- a/libs/property_tree/include/boost/property_tree/ptree_serialization.hpp
++++ b/libs/property_tree/include/boost/property_tree/ptree_serialization.hpp
+@@ -17,6 +17,7 @@
+ #include <boost/serialization/detail/stack_constructor.hpp>
+ #include <boost/serialization/split_free.hpp>
+ #include <boost/serialization/utility.hpp>
++#include <boost/serialization/library_version_type.hpp>
+ 
+ namespace boost { namespace property_tree
+ {
+@@ -55,7 +56,6 @@ namespace boost { namespace property_tree
+                                   basic_ptree<K, D, C> &t)
+         {
+             namespace bsl = boost::serialization;
+-            namespace bsa = boost::archive;
+ 
+             typedef basic_ptree<K, D, C> tree;
+             typedef typename tree::value_type value_type;
+@@ -63,10 +63,10 @@ namespace boost { namespace property_tree
+             bsl::collection_size_type count;
+             ar >> BOOST_SERIALIZATION_NVP(count);
+             bsl::item_version_type item_version(0);
+-            const bsa::library_version_type library_version(
++            const bsl::library_version_type library_version(
+                 ar.get_library_version()
+             );
+-            if(bsa::library_version_type(3) < library_version){
++            if(bsl::library_version_type(3) < library_version){
+                 ar >> BOOST_SERIALIZATION_NVP(item_version);
+             }
+             // Can't use the serialization helper, it expects resize() to exist
