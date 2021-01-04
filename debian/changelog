@@ -1,3 +1,11 @@
+boost1.74 (1.74.0-7) unstable; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * [8b3d244] Fix ptree_serialization failing to build with boost1.74.
+    (Closes: #977230)
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 04 Jan 2021 22:17:05 +0100
+
 boost1.74 (1.74.0-6) unstable; urgency=medium
 
   * [25520d6] Fix detection of ASM-files for mipsel. (Closes: #977921)
