@@ -1,3 +1,10 @@
+boost1.74 (1.74.0-8) unstable; urgency=medium
+
+  * [85a2610] Fix compilation warnings. (Closes: #980497)
+  * [1cd99ad] Set Standards-version to 4.5.1
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 23 Jan 2021 20:00:18 +0100
+
 boost1.74 (1.74.0-7) unstable; urgency=medium
 
   [ Dimitri John Ledkov ]
