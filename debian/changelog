@@ -1,3 +1,13 @@
+boost1.74 (1.74.0-9) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * libboost1.74-dev: Smoothen upgrades from buster by depending on
+    libstdc++-${gxx:major}-dev using the build-time version of g++ instead of
+    the virtual libstdc++-dev provided by multiple packages.
+    (Closes: #984838)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 13 Mar 2021 09:21:38 +0100
+
 boost1.74 (1.74.0-8) unstable; urgency=medium
 
   * [85a2610] Fix compilation warnings. (Closes: #980497)

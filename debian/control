@@ -24,7 +24,7 @@ Package: libboost1.74-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, libstdc++-dev
+Depends: ${misc:Depends}, ${shlibs:Depends}, libstdc++-${gxx:major}-dev
 Suggests: libboost1.74-doc,
  libboost-atomic1.74-dev,
  libboost-chrono1.74-dev,
