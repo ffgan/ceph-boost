@@ -1,3 +1,9 @@
+boost1.74 (1.74.0-10) unstable; urgency=medium
+
+  * [0bf0df0] Fix autopkgtests in testing. (Closes: #992223)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 16 Sep 2021 23:00:19 +0200
+
 boost1.74 (1.74.0-9) unstable; urgency=medium
 
   [ Andreas Beckmann ]
