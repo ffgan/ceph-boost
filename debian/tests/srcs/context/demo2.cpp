@@ -1,170 +1,46 @@
-// https://github.com/boostorg/context/blob/develop/example/execution_context_v2/parser.cpp
 
-//          Copyright Oliver Kowalke 2014.
+//          Copyright Oliver Kowalke 2009.
 // Distributed under the Boost Software License, Version 1.0.
 //    (See accompanying file LICENSE_1_0.txt or copy at
 //          http://www.boost.org/LICENSE_1_0.txt)
 
+#include <cstddef>
 #include <cstdlib>
-#include <exception>
-#include <functional>
+#include <cstring>
 #include <iostream>
-#include <memory>
-#include <sstream>
+#include <emmintrin.h>
 
-#include <boost/context/execution_context.hpp>
+#include <boost/context/continuation.hpp>
 
 namespace ctx = boost::context;
 
-/*
- * grammar:
- *   P ---> E '\0'
- *   E ---> T {('+'|'-') T}
- *   T ---> S {('*'|'/') S}
- *   S ---> digit | '(' E ')'
- */
-class Parser
-{
-    char next;
-    std::istream &is;
-    std::function<void(char)> cb;
+void echoSSE( int i) {
+    __m128i xmm;
+    xmm = _mm_set_epi32( i, i + 1, i + 2, i + 3);
+    uint32_t v32[4];
+    memcpy( & v32, & xmm, 16);
+    std::cout << v32[0]; 
+    std::cout << v32[1]; 
+    std::cout << v32[2]; 
+    std::cout << v32[3]; 
+}
 
-    char pull()
-    {
-        return std::char_traits<char>::to_char_type(is.get());
-    }
 
-    void scan()
-    {
-        do
-        {
-            next = pull();
-        } while (isspace(next));
-    }
-
-  public:
-    Parser(std::istream &is_, std::function<void(char)> cb_) : next(), is(is_), cb(cb_)
-    {
-    }
-
-    void run()
-    {
-        scan();
-        E();
-    }
-
-  private:
-    void E()
-    {
-        T();
-        while (next == '+' || next == '-')
-        {
-            cb(next);
-            scan();
-            T();
-        }
-    }
-
-    void T()
-    {
-        S();
-        while (next == '*' || next == '/')
-        {
-            cb(next);
-            scan();
-            S();
-        }
-    }
-
-    void S()
-    {
-        if (isdigit(next))
-        {
-            cb(next);
-            scan();
-        }
-        else if (next == '(')
-        {
-            cb(next);
-            scan();
-            E();
-            if (next == ')')
-            {
-                cb(next);
-                scan();
+int main( int argc, char * argv[]) {
+    int i = 0;
+    ctx::continuation c = ctx::callcc(
+        [&i](ctx::continuation && c) {
+            for (;;) {
+                std::cout << i;
+                echoSSE( i);
+                std::cout << " ";
+                c = c.resume();
             }
-            else
-            {
-                throw std::runtime_error("parsing failed");
-            }
-        }
-        else
-        {
-            throw std::runtime_error("parsing failed");
-        }
+            return std::move( c);
+        });
+    for (; i < 10; ++i) {
+        c = c.resume();
     }
-};
-
-int main()
-{
-    try
-    {
-        std::istringstream is("1+1");
-        bool done = false;
-        std::exception_ptr except;
-
-        // execute parser in new execution context
-        ctx::execution_context<char> source(
-            [&is, &done, &except](ctx::execution_context<char> &&sink, char) {
-                // create parser with callback function
-                Parser p(is,
-                         [&sink](char ch) {
-                             // resume main execution context
-                             auto result = sink(ch);
-                             sink = std::move(std::get<0>(result));
-                         });
-                try
-                {
-                    // start recursive parsing
-                    p.run();
-                }
-                catch (...)
-                {
-                    // store other exceptions in exception-pointer
-                    except = std::current_exception();
-                }
-                // set termination flag
-                done = true;
-                // resume main execution context
-                return std::move(sink);
-            });
-
-        // user-code pulls parsed data from parser
-        // invert control flow
-        auto result = source('\0');
-        source = std::move(std::get<0>(result));
-        char c = std::get<1>(result);
-        if (except)
-        {
-            std::rethrow_exception(except);
-        }
-        while (!done)
-        {
-            printf("Parsed: %c\n", c);
-            std::tie(source, c) = source('\0');
-            if (except)
-            {
-                std::rethrow_exception(except);
-            }
-        }
-
-        std::cout << "main: done" << std::endl;
-
-        return EXIT_SUCCESS;
-    }
-    catch (std::exception const &e)
-    {
-        std::cerr << "exception: " << e.what() << std::endl;
-    }
-    return EXIT_FAILURE;
+    std::cout << "\nmain: done" << std::endl;
+    return EXIT_SUCCESS;
 }
