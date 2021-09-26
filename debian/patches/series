@@ -15,3 +15,4 @@ fix_ftbfs_hurdi386.patch
 fix_mipsel_asm_files.patch
 62.patch
 fix_warnings.patch
+fix_includes.patch

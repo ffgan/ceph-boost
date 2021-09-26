@@ -30,9 +30,9 @@ Tests: graph
 Depends: libboost-graph-dev, build-essential, cmake
 Restrictions: allow-stderr
 
-#Tests: graph-parallel
-#Depends: libboost-graph-parallel-dev, libboost-mpi-dev, libboost-system-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
-#Restrictions: allow-stderr
+Tests: graph-parallel
+Depends: libboost-graph-parallel-dev, libboost-mpi-dev, libboost-system-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Restrictions: allow-stderr
 
 Tests: iostreams
 Depends: libboost-iostreams-dev, build-essential, cmake

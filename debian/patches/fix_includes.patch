@@ -1,0 +1,207 @@
+Description: Fix includes
+Origin: https://github.com/boostorg/graph_parallel/commit/a6f794d69ed7763b79500147d495b0d347afe919
+Origin: https://github.com/boostorg/graph/commit/03318bfb5f7696e6bd41caff9a22699157c71567
+Author: jzmaddock <john@johnmaddock.co.uk>
+Acked-By: Anton Gladky <gladk@debian.org>
+Last-Update: 2021-09-26
+
+diff --git a/libs/graph/include/boost/graph/breadth_first_search.hpp b/libs/graph/include/boost/graph/breadth_first_search.hpp
+index e0525cd1..0993d55d 100644
+--- a/libs/graph/include/boost/graph/breadth_first_search.hpp
++++ b/libs/graph/include/boost/graph/breadth_first_search.hpp
+@@ -27,7 +27,7 @@
+ #include <boost/graph/detail/mpi_include.hpp>
+ #include <boost/concept/assert.hpp>
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / concepts.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/concepts.hpp>)
+ 
+ namespace boost
+ {
+@@ -403,6 +403,6 @@ namespace graph
+ 
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / breadth_first_search.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/breadth_first_search.hpp>)
+ 
+ #endif // BOOST_GRAPH_BREADTH_FIRST_SEARCH_HPP
+diff --git a/libs/graph/include/boost/graph/connected_components.hpp b/libs/graph/include/boost/graph/connected_components.hpp
+index 1980d32b..75e76a07 100644
+--- a/libs/graph/include/boost/graph/connected_components.hpp
++++ b/libs/graph/include/boost/graph/connected_components.hpp
+@@ -109,6 +109,6 @@ connected_components(const Graph& g,
+ 
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / connected_components.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/connected_components.hpp>)
+ 
+ #endif // BOOST_GRAPH_CONNECTED_COMPONENTS_HPP
+diff --git a/libs/graph/include/boost/graph/depth_first_search.hpp b/libs/graph/include/boost/graph/depth_first_search.hpp
+index 607a6f61..17d25e89 100644
+--- a/libs/graph/include/boost/graph/depth_first_search.hpp
++++ b/libs/graph/include/boost/graph/depth_first_search.hpp
+@@ -428,6 +428,6 @@ void depth_first_visit(const IncidenceGraph& g,
+ }
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / depth_first_search.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/depth_first_search.hpp>)
+ 
+ #endif
+diff --git a/libs/graph/include/boost/graph/dijkstra_shortest_paths.hpp b/libs/graph/include/boost/graph/dijkstra_shortest_paths.hpp
+index 53540834..9fbcfcce 100644
+--- a/libs/graph/include/boost/graph/dijkstra_shortest_paths.hpp
++++ b/libs/graph/include/boost/graph/dijkstra_shortest_paths.hpp
+@@ -575,6 +575,6 @@ inline void dijkstra_shortest_paths(const VertexListGraph& g,
+ 
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / dijkstra_shortest_paths.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/dijkstra_shortest_paths.hpp>)
+ 
+ #endif // BOOST_GRAPH_DIJKSTRA_HPP
+diff --git a/libs/graph/include/boost/graph/fruchterman_reingold.hpp b/libs/graph/include/boost/graph/fruchterman_reingold.hpp
+index 55a26229..5d60674c 100644
+--- a/libs/graph/include/boost/graph/fruchterman_reingold.hpp
++++ b/libs/graph/include/boost/graph/fruchterman_reingold.hpp
+@@ -455,6 +455,6 @@ void fruchterman_reingold_force_directed_layout(
+ 
+ } // end namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / fruchterman_reingold.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/fruchterman_reingold.hpp>)
+ 
+ #endif // BOOST_GRAPH_FRUCHTERMAN_REINGOLD_FORCE_DIRECTED_LAYOUT_HPP
+diff --git a/libs/graph/include/boost/graph/graphviz.hpp b/libs/graph/include/boost/graph/graphviz.hpp
+index 8753ac97..d7ddf80a 100644
+--- a/libs/graph/include/boost/graph/graphviz.hpp
++++ b/libs/graph/include/boost/graph/graphviz.hpp
+@@ -1025,6 +1025,6 @@ bool read_graphviz(std::istream& in, MutableGraph& graph,
+ 
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / graphviz.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/graphviz.hpp>)
+ 
+ #endif // BOOST_GRAPHVIZ_HPP
+diff --git a/libs/graph/include/boost/graph/one_bit_color_map.hpp b/libs/graph/include/boost/graph/one_bit_color_map.hpp
+index 2f3e9a43..cdc59e17 100644
+--- a/libs/graph/include/boost/graph/one_bit_color_map.hpp
++++ b/libs/graph/include/boost/graph/one_bit_color_map.hpp
+@@ -99,6 +99,6 @@ inline one_bit_color_map< IndexMap > make_one_bit_color_map(
+ 
+ } // end namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / one_bit_color_map.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/one_bit_color_map.hpp>)
+ 
+ #endif // BOOST_ONE_BIT_COLOR_MAP_HPP
+diff --git a/libs/graph/include/boost/graph/page_rank.hpp b/libs/graph/include/boost/graph/page_rank.hpp
+index e9caf215..54170da5 100644
+--- a/libs/graph/include/boost/graph/page_rank.hpp
++++ b/libs/graph/include/boost/graph/page_rank.hpp
+@@ -174,6 +174,6 @@ namespace graph
+ }
+ } // end namespace boost::graph
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / page_rank.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/page_rank.hpp>)
+ 
+ #endif // BOOST_GRAPH_PAGE_RANK_HPP
+diff --git a/libs/graph/include/boost/graph/rmat_graph_generator.hpp b/libs/graph/include/boost/graph/rmat_graph_generator.hpp
+index 2347cc10..1a2c838f 100644
+--- a/libs/graph/include/boost/graph/rmat_graph_generator.hpp
++++ b/libs/graph/include/boost/graph/rmat_graph_generator.hpp
+@@ -658,6 +658,6 @@ private:
+ 
+ } // end namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / rmat_graph_generator.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/rmat_graph_generator.hpp>)
+ 
+ #endif // BOOST_GRAPH_RMAT_GENERATOR_HPP
+diff --git a/libs/graph/include/boost/graph/strong_components.hpp b/libs/graph/include/boost/graph/strong_components.hpp
+index 31f003a7..18e3f8fa 100644
+--- a/libs/graph/include/boost/graph/strong_components.hpp
++++ b/libs/graph/include/boost/graph/strong_components.hpp
+@@ -342,6 +342,6 @@ kosaraju_strong_components(
+ 
+ } // namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / strong_components.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/strong_components.hpp>)
+ 
+ #endif // BOOST_GRAPH_STRONG_COMPONENTS_HPP
+diff --git a/libs/graph/include/boost/graph/two_bit_color_map.hpp b/libs/graph/include/boost/graph/two_bit_color_map.hpp
+index d7572de3..a8026442 100644
+--- a/libs/graph/include/boost/graph/two_bit_color_map.hpp
++++ b/libs/graph/include/boost/graph/two_bit_color_map.hpp
+@@ -103,6 +103,6 @@ inline two_bit_color_map< IndexMap > make_two_bit_color_map(
+ 
+ } // end namespace boost
+ 
+-#include BOOST_GRAPH_MPI_INCLUDE(< boost / graph / distributed / two_bit_color_map.hpp >)
++#include BOOST_GRAPH_MPI_INCLUDE(<boost/graph/distributed/two_bit_color_map.hpp>)
+ 
+ #endif // BOOST_TWO_BIT_COLOR_MAP_HPP
+diff --git a/libs/graph/include/boost/pending/relaxed_heap.hpp b/libs/graph/include/boost/pending/relaxed_heap.hpp
+index c9e91470..d7747d4d 100644
+--- a/libs/graph/include/boost/pending/relaxed_heap.hpp
++++ b/libs/graph/include/boost/pending/relaxed_heap.hpp
+@@ -6,8 +6,7 @@
+ 
+ //  Authors: Douglas Gregor
+ //           Andrew Lumsdaine
+-#warning \
+-    "Use of relaxed_heap is depreciated; please use the standard heap functions."
++
+ #ifndef BOOST_RELAXED_HEAP_HEADER
+ #define BOOST_RELAXED_HEAP_HEADER
+ 
+diff --git a/libs/graph_parallel/include/boost/graph/distributed/adjacency_list.hpp b/libs/graph_parallel/include/boost/graph/distributed/adjacency_list.hpp
+index 21753563..dd8344fd 100644
+--- a/libs/graph_parallel/include/boost/graph/distributed/adjacency_list.hpp
++++ b/libs/graph_parallel/include/boost/graph/distributed/adjacency_list.hpp
+@@ -30,6 +30,7 @@
+ #include <boost/type_traits/is_same.hpp>
+ #include <boost/assert.hpp>
+ #include <list>
++#include <iterator>
+ #include <algorithm>
+ #include <boost/limits.hpp>
+ #include <boost/graph/parallel/properties.hpp>
+@@ -1421,7 +1422,7 @@ namespace boost {
+     /// Iterator over the neighbors of a vertex
+     typedef boost::adjacency_iterator<
+               adjacency_list, vertex_descriptor, out_edge_iterator,
+-              typename detail::iterator_traits<base_out_edge_iterator>
++              typename std::iterator_traits<base_out_edge_iterator>
+                          ::difference_type>
+       adjacency_iterator;
+ 
+diff --git a/libs/graph_parallel/include/boost/graph/distributed/crauser_et_al_shortest_paths.hpp b/libs/graph_parallel/include/boost/graph/distributed/crauser_et_al_shortest_paths.hpp
+index 060cbf9c..4f16860d 100644
+--- a/libs/graph_parallel/include/boost/graph/distributed/crauser_et_al_shortest_paths.hpp
++++ b/libs/graph_parallel/include/boost/graph/distributed/crauser_et_al_shortest_paths.hpp
+@@ -45,6 +45,7 @@
+ #include <boost/graph/breadth_first_search.hpp>
+ #include <boost/graph/dijkstra_shortest_paths.hpp>
+ #include <boost/graph/parallel/container_traits.hpp>
++#include <boost/pending/relaxed_heap.hpp>
+ 
+ #ifdef PBGL_ACCOUNTING
+ #  include <boost/graph/accounting.hpp>
+diff --git a/libs/graph_parallel/include/boost/graph/distributed/eager_dijkstra_shortest_paths.hpp b/libs/graph_parallel/include/boost/graph/distributed/eager_dijkstra_shortest_paths.hpp
+index 8b78d633..9d91b8ae 100644
+--- a/libs/graph_parallel/include/boost/graph/distributed/eager_dijkstra_shortest_paths.hpp
++++ b/libs/graph_parallel/include/boost/graph/distributed/eager_dijkstra_shortest_paths.hpp
+@@ -31,6 +31,7 @@
+ #include <boost/graph/breadth_first_search.hpp>
+ #include <boost/graph/dijkstra_shortest_paths.hpp>
+ #include <boost/graph/parallel/container_traits.hpp>
++#include <boost/pending/relaxed_heap.hpp>
+ 
+ #ifdef PBGL_ACCOUNTING
+ #  include <boost/graph/accounting.hpp>
