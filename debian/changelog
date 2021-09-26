@@ -1,3 +1,16 @@
+boost1.74 (1.74.0-11) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [fffe3c2] Fix includes and enable graph-tests.
+
+  [ Helmut Grohne ]
+  * [e3ba32f] Multiarchify python3-dev runtime dependency. (Closes: #983100)
+
+  [ Graham Inggs ]
+  * [7d9d824] Fix boost.mpi Python module install. (Closes: #994753)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 26 Sep 2021 19:23:11 +0200
+
 boost1.74 (1.74.0-10) unstable; urgency=medium
 
   * [0bf0df0] Fix autopkgtests in testing. (Closes: #992223)
