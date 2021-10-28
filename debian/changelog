@@ -1,3 +1,9 @@
+boost1.74 (1.74.0-12) unstable; urgency=medium
+
+  * [96b62ca] Update autopkgtest for b/context. (Closes: #995571)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 28 Oct 2021 23:05:58 +0200
+
 boost1.74 (1.74.0-11) unstable; urgency=medium
 
   [ Anton Gladky ]
