@@ -1,46 +1,36 @@
 
-//          Copyright Oliver Kowalke 2009.
+//          Copyright Oliver Kowalke 2016.
 // Distributed under the Boost Software License, Version 1.0.
 //    (See accompanying file LICENSE_1_0.txt or copy at
 //          http://www.boost.org/LICENSE_1_0.txt)
 
-#include <cstddef>
 #include <cstdlib>
-#include <cstring>
 #include <iostream>
-#include <emmintrin.h>
+#include <memory>
 
-#include <boost/context/continuation.hpp>
+#include <boost/context/fiber.hpp>
 
 namespace ctx = boost::context;
 
-void echoSSE( int i) {
-    __m128i xmm;
-    xmm = _mm_set_epi32( i, i + 1, i + 2, i + 3);
-    uint32_t v32[4];
-    memcpy( & v32, & xmm, 16);
-    std::cout << v32[0]; 
-    std::cout << v32[1]; 
-    std::cout << v32[2]; 
-    std::cout << v32[3]; 
-}
-
-
-int main( int argc, char * argv[]) {
-    int i = 0;
-    ctx::continuation c = ctx::callcc(
-        [&i](ctx::continuation && c) {
-            for (;;) {
-                std::cout << i;
-                echoSSE( i);
-                std::cout << " ";
-                c = c.resume();
+int main() {
+    int a;
+    ctx::fiber f{
+        [&a](ctx::fiber && f){
+            a=0;
+            int b=1;
+            for(;;){
+                f = std::move( f).resume();
+                int next=a+b;
+                a=b;
+                b=next;
             }
-            return std::move( c);
-        });
-    for (; i < 10; ++i) {
-        c = c.resume();
+            return std::move( f);
+        }};
+    for ( int j = 0; j < 10; ++j) {
+        f = std::move( f).resume();
+        std::cout << a << " ";
     }
-    std::cout << "\nmain: done" << std::endl;
+    std::cout << std::endl;
+    std::cout << "main: done" << std::endl;
     return EXIT_SUCCESS;
 }
