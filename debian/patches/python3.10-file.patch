@@ -1,0 +1,40 @@
+Description: Convert Python 3.1+ to use public C API for filenames
+Origin: upstream, https://github.com/boostorg/python/commit/d9f06052e28873037db7f98629bce72182a42410
+Author: Pat Riehecky <riehecky@fnal.gov>
+Last-Update: 2020-06-29
+Description: Fix compatibility with Python 3.10.0a4: fopen
+ Replace private _Py_fopen() with public fopen(): private _Py_fopen()
+ function was removed in 3.10.0a4
+Origin: upstream, https://github.com/boostorg/python/commit/cbd2d9f033c61d29d0a1df14951f4ec91e7d05cd.patch
+Author: Victor Stinner <vstinner@python.org>
+Last-Update: 2021-01-06
+
+--- a/libs/python/src/exec.cpp
++++ b/libs/python/src/exec.cpp
+@@ -104,14 +104,22 @@
+   if (local.is_none()) local = global;
+   // should be 'char const *' but older python versions don't use 'const' yet.
+   char *f = const_cast<char *>(filename);
+-  // Let python open the file to avoid potential binary incompatibilities.
+-#if PY_VERSION_HEX >= 0x03040000
+-  FILE *fs = _Py_fopen(f, "r");
++#if PY_VERSION_HEX >= 0x03010000
++  // Let python manage any UTF bits to avoid potential incompatibilities.
++  PyObject *fo = Py_BuildValue("s", f);
++  PyObject *fb = Py_None;
++  PyUnicode_FSConverter(fo, &fb);
++  f = PyBytes_AsString(fb);
++  FILE *fs = fopen(f, "r");
++  Py_DECREF(fo);
++  Py_DECREF(fb);
+ #elif PY_VERSION_HEX >= 0x03000000
++  // Let python open the file to avoid potential binary incompatibilities.
+   PyObject *fo = Py_BuildValue("s", f);
+-  FILE *fs = _Py_fopen(fo, "r");
++  FILE *fs = fopen(fo, "r");
+   Py_DECREF(fo);
+ #else
++  // Let python open the file to avoid potential binary incompatibilities.
+   PyObject *pyfile = PyFile_FromString(f, const_cast<char*>("r"));
+   if (!pyfile) throw std::invalid_argument(std::string(f) + " : no such file");
+   python::handle<> file(pyfile);

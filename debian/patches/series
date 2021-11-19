@@ -17,3 +17,5 @@ fix_mipsel_asm_files.patch
 fix_warnings.patch
 fix_includes.patch
 arm-fp-mode.diff
+python3.10-file.patch
+python3.10-pep-620.patch
