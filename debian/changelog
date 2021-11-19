@@ -1,3 +1,26 @@
+boost1.74 (1.74.0-13) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * Import fixes from Ubuntu
+
+  [ Matthias Klose ]
+  * [2098d38] Explicitly set fpu mode on armhf. (Closes: #999853)
+
+  [ Graham Inggs ]
+  * [107cd01] Cherry-pick upstream commits:
+      - Convert Python 3.1+ to use public C API for filenames
+      - Replace private _Py_fopen() with public fopen(): private _Py_fopen()
+      - Fix Python 3.10 (PEP-620) incompatibility
+
+  [ Gianfranco Costamagna ]
+  * [7d6aad9] Cherry-pick upstream commits:
+    Cherry-pick upstream commits:
+      - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
+        Fix regex to allow search for python3.10 too (fixes e.g.
+        ros-image-common build) 
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 19 Nov 2021 15:23:15 +0100
+
 boost1.74 (1.74.0-12) unstable; urgency=medium
 
   * [96b62ca] Update autopkgtest for b/context. (Closes: #995571)
