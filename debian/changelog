@@ -2,6 +2,8 @@ boost1.74 (1.74.0-13) unstable; urgency=medium
 
   [ Anton Gladky ]
   * Import fixes from Ubuntu
+  * [fabaa30] Import upstream patch:
+    fix asio compilation with -fno-rtti. (Closes: #999778)
 
   [ Matthias Klose ]
   * [2098d38] Explicitly set fpu mode on armhf. (Closes: #999853)
