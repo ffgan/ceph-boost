@@ -1,0 +1,36 @@
+--- a/libs/context/src/asm/jump_arm_aapcs_elf_gas.S
++++ b/libs/context/src/asm/jump_arm_aapcs_elf_gas.S
+@@ -53,6 +53,7 @@ jump_fcontext:
+     @ prepare stack for FPU
+     sub  sp, sp, #64
+ #if (defined(__VFP_FP__) && !defined(__SOFTFP__))
++    .fpu vfpv2
+     @ save S16-S31
+     vstmia sp, {d8-d15}
+ #endif
+@@ -64,6 +65,7 @@ jump_fcontext:
+     mov  sp, a2
+ 
+ #if (defined(__VFP_FP__) && !defined(__SOFTFP__))
++    .fpu vfpv2
+     @ restore S16-S31
+     vldmia  sp, {d8-d15}
+ #endif
+--- a/libs/context/src/asm/ontop_arm_aapcs_elf_gas.S
++++ b/libs/context/src/asm/ontop_arm_aapcs_elf_gas.S
+@@ -53,6 +53,7 @@ ontop_fcontext:
+     @ prepare stack for FPU
+     sub  sp, sp, #64
+ #if (defined(__VFP_FP__) && !defined(__SOFTFP__))
++    .fpu vfpv2
+     @ save S16-S31
+     vstmia sp, {d8-d15}
+ #endif
+@@ -67,6 +68,7 @@ ontop_fcontext:
+     mov  a2, a1
+ 
+ #if (defined(__VFP_FP__) && !defined(__SOFTFP__))
++    .fpu vfpv2
+     @ restore S16-S31
+     vldmia  sp, {d8-d15}
+ #endif
