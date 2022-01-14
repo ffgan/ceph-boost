@@ -1,9 +1,9 @@
-boost1.74 (1.74.0-14) UNRELEASED; urgency=medium
+boost1.74 (1.74.0-14) unstable; urgency=medium
 
   * Fix b2 compilation on kFreeBSD (closes: #1003384).
   * Fix missing UTIME_OMIT symbol on kFreeBSD.
 
- -- Giovanni Mascellani <gio@debian.org>  Thu, 13 Jan 2022 20:32:47 +0100
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 14 Jan 2022 09:41:55 +0100
 
 boost1.74 (1.74.0-13) unstable; urgency=medium
 
