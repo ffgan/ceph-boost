@@ -3,12 +3,6 @@ include:
   - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
   - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
 
-# Do compilation on a runner provided by gio that allows jobs to take
-# more than an hour
-build:
-  tags:
-    - long-running
-
 # Do not execute very slow jobs
 variables:
   SALSA_CI_DISABLE_PIUPARTS: 1
