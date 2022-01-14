@@ -1,0 +1,14 @@
+--- a/libs/filesystem/src/operations.cpp
++++ b/libs/filesystem/src/operations.cpp
+@@ -1828,6 +1828,11 @@ std::time_t last_write_time(const path& p, system::error_code* ec)
+ # endif
+ }
+ 
++#if defined(__FreeBSD_kernel__)
++#define	UTIME_NOW	-1
++#define	UTIME_OMIT	-2
++#endif
++
+ BOOST_FILESYSTEM_DECL
+ void last_write_time(const path& p, const std::time_t new_time,
+                       system::error_code* ec)
