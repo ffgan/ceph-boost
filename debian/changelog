@@ -1,3 +1,11 @@
+boost1.74 (1.74.0-15) unstable; urgency=medium
+
+  [ Bernhard Übelacker ]
+  * [9826f74] Fix enums at i386. 
+  * [7f367ea] Add test for enums.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 31 May 2022 06:52:56 +0200
+
 boost1.74 (1.74.0-14) unstable; urgency=medium
 
   * Fix b2 compilation on kFreeBSD (closes: #1003384).
