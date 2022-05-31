@@ -31,7 +31,8 @@ planet.set('howdy') ;\
 print(planet.greet());\
 x = libdemo2.Var('pi') ;\
 x.value = 3.14 ;\
-print (x.name, 'is around', x.value)
+print (x.name, 'is around', x.value); \
+print ('enum values are: ', libdemo2.Enum.values) \
 "
 
 echo "run: demo2 OK"
