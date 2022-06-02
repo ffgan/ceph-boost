@@ -1,3 +1,10 @@
+boost1.74 (1.74.0-16) unstable; urgency=medium
+
+  [ Bernhard Übelacker ]
+  * [fa25a26] Make enum fix used at i386, armhf and armel.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 02 Jun 2022 06:26:21 +0200
+
 boost1.74 (1.74.0-15) unstable; urgency=medium
 
   [ Bernhard Übelacker ]
