@@ -1,3 +1,12 @@
+boost1.74 (1.74.0-16.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/patches/74a94fe7f47b2e3f707cf4589fbb635a50f22ad2.patch:
+    - cherry-pick upstream asio change to fix exit failures with openssl 3.0.4
+      Closes: #1014180, #1013530, #1013472 and many others probably
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 04 Jul 2022 09:34:02 +0200
+
 boost1.74 (1.74.0-16) unstable; urgency=medium
 
   [ Bernhard Übelacker ]

@@ -24,3 +24,4 @@ e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
 fix_b2_freebsd.patch
 fix_utime_omit_freebsd.patch
 fix-enum.patch
+74a94fe7f47b2e3f707cf4589fbb635a50f22ad2.patch
