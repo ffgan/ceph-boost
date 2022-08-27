@@ -1,3 +1,9 @@
+boost1.74 (1.74.0-17) UNRELEASED; urgency=medium
+
+  * Fix FTBFS with libxslt version 1.1.35 (closes: #1016321, #1015095).
+
+ -- Giovanni Mascellani <gio@debian.org>  Sat, 27 Aug 2022 09:23:44 +0200
+
 boost1.74 (1.74.0-16.1) unstable; urgency=medium
 
   * Non-maintainer upload.
