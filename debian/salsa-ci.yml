@@ -1,11 +1,11 @@
 ---
 include:
-  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
-  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/recipes/debian.yml
 
 # Do not execute very slow jobs
 variables:
   SALSA_CI_DISABLE_PIUPARTS: 1
+  SALSA_CI_DISABLE_BLHC: 1
   SALSA_CI_DISABLE_REPROTEST: 1
   SALSA_CI_DISABLE_BUILD_PACKAGE_ALL: 1
   SALSA_CI_DISABLE_BUILD_PACKAGE_ANY: 1
