@@ -10,10 +10,10 @@ fix https://github.com/boostorg/boostbook/issues/14
  xsl/annotation.xsl | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/xsl/annotation.xsl b/xsl/annotation.xsl
-index 1d9b79e..c8b5b8b 100644
---- a/tools/boostbook/xsl/annotation.xsl
-+++ b/tools/boostbook/xsl/annotation.xsl
+Index: boost1.80-1.80.0/tools/boostbook/xsl/annotation.xsl
+===================================================================
+--- boost1.80-1.80.0.orig/tools/boostbook/xsl/annotation.xsl
++++ boost1.80-1.80.0/tools/boostbook/xsl/annotation.xsl
 @@ -426,7 +426,7 @@
      <xsl:copy/>
    </xsl:template>
