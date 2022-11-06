@@ -1,3 +1,9 @@
+boost1.74 (1.80.0-1) UNRELEASED; urgency=medium
+
+  * Prepare 1.80.0 release
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 06 Nov 2022 10:49:03 +0100
+
 boost1.74 (1.74.0-17) unstable; urgency=medium
 
   * Fix FTBFS with libxslt version 1.1.35 (closes: #1016321, #1015095).
