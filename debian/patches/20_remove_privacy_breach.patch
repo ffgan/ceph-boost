@@ -1,0 +1,99 @@
+Description: Rremove proviacy bridge
+Author: Anton Gladky <gladk@debian.org>
+Last-Update: 2022-12-09
+
+Index: boost/tools/quickbook/doc/block.qbk
+===================================================================
+--- boost.orig/tools/quickbook/doc/block.qbk
++++ boost/tools/quickbook/doc/block.qbk
+@@ -557,14 +557,12 @@ character or the underscore. The replace
+ marked up). Example:
+ 
+ ```
+-[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1]]
++[def sf_logo []]
+ sf_logo
+ ```
+ 
+ Now everywhere the sf_logo is placed, the picture will be inlined.
+ 
+-[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&type=1]]
+-sf_logo
+ 
+ [tip It's a good idea to use macro identifiers that are distinguishable.
+ For instance, in this document, macro identifiers have two leading and
+Index: boost/tools/quickbook/test/quickbook_manual-1_4.gold
+===================================================================
+--- boost.orig/tools/quickbook/test/quickbook_manual-1_4.gold
++++ boost/tools/quickbook/test/quickbook_manual-1_4.gold
+@@ -1756,14 +1756,10 @@ escape (no processing/formatting)
+           character or the underscore. The replacement text can be any phrase (even
+           marked up). Example:
+         </para>
+-<programlisting><!--quickbook-escape-prefix-->[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1]]
+-sf_logo
+-<!--quickbook-escape-postfix--></programlisting>
+         <para>
+           Now everywhere the sf_logo is placed, the picture will be inlined.
+         </para>
+         <para>
+-          <inlinemediaobject><imageobject><imagedata fileref="http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1"></imagedata></imageobject>
+           <textobject>
+             <phrase>sflogo</phrase>
+           </textobject>
+Index: boost/tools/quickbook/test/quickbook_manual-1_4.gold-html
+===================================================================
+--- boost.orig/tools/quickbook/test/quickbook_manual-1_4.gold-html
++++ boost/tools/quickbook/test/quickbook_manual-1_4.gold-html
+@@ -1934,16 +1934,9 @@ escape (no processing/formatting)
+               an alphabetic character or the underscore. The replacement text can
+               be any phrase (even marked up). Example:
+             </p>
+-<pre class="programlisting">[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1]]
+-sf_logo
+-</pre>
+             <p>
+               Now everywhere the sf_logo is placed, the picture will be inlined.
+             </p>
+-            <p>
+-              <span class="inlinemediaobject"><img src="http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1"
+-              alt="[]"/></span>
+-            </p>
+             <div class="tip">
+               <p>
+                 It's a good idea to use macro identifiers that are distinguishable.
+@@ -3280,7 +3273,6 @@ boostbook standalone
+     :
+         my_doc
+     :
+-        &lt;xsl:param&gt;boost.image.src=images/my_project_logo.png
+         &lt;xsl:param&gt;boost.image.alt=&quot;\&quot;My Project\&quot;&quot;
+         &lt;xsl:param&gt;boost.image.w=100
+         &lt;xsl:param&gt;boost.image.h=50
+Index: boost/tools/quickbook/test/quickbook_manual-1_4.quickbook
+===================================================================
+--- boost.orig/tools/quickbook/test/quickbook_manual-1_4.quickbook
++++ boost/tools/quickbook/test/quickbook_manual-1_4.quickbook
+@@ -1081,14 +1081,9 @@ white space characters except '\]'. A ma
+ character or the underscore. The replacement text can be any phrase (even
+ marked up). Example:
+ 
+-[pre'''
+-[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&amp;type=1]]
+-sf_logo
+-''']
+ 
+ Now everywhere the sf_logo is placed, the picture will be inlined.
+ 
+-[def sf_logo [$http://sourceforge.net/sflogo.php?group_id=28447&type=1]]
+ sf_logo
+ 
+ [tip It's a good idea to use macro identifiers that are distinguishable.
+@@ -1878,7 +1873,6 @@ boostbook standalone
+     :
+         my_doc
+     :
+-        <xsl:param>boost.image.src=images/my_project_logo.png
+         <xsl:param>boost.image.alt="\\"My Project\\""
+         <xsl:param>boost.image.w=100
+         <xsl:param>boost.image.h=50
