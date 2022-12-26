@@ -1,6 +1,12 @@
-boost1.80 (1.80.0-1~exp1) experimental; urgency=medium
+boost1.81 (1.81.0-1~exp1) experimental; urgency=medium
 
-  * Prepare 1.80.0 release
+  * New 1.81.0 release.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 26 Dec 2022 09:07:54 +0100
+
+boost1.81 (1.80.0-1~exp1) experimental; urgency=medium
+
+  * New 1.80.0 release.
 
  -- Anton Gladky <gladk@debian.org>  Sun, 06 Nov 2022 10:49:03 +0100
 

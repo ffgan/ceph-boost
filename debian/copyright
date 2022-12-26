@@ -47976,6 +47976,13 @@ Copyright:
 License: BSL-1.0
 
 Files:
+ libs/url/*
+Copyright:
+ 2019-2022 Vinnie Falco
+ 2022 Alan de Freitas
+License: BSL-1.0
+
+Files:
  libs/math/reporting/performance/test_distributions_mode.cpp
 Copyright:
  2021 Victor Ananyev

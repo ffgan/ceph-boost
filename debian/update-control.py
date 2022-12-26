@@ -85,6 +85,6 @@ def processControl():
 
 
 
-gOldVersion = BoostVersion('1.74.0')
-gNewVersion = BoostVersion('1.80.0')
+gOldVersion = BoostVersion('1.80.0')
+gNewVersion = BoostVersion('1.81.0')
 processControl()

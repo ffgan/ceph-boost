@@ -9,7 +9,7 @@ boost_libs := atomic chrono container contract date-time exception filesystem	\
               graph graph-parallel iostreams locale log math mpi	\
               mpi-python nowide program-options python random regex	\
               serialization stacktrace system test thread timer \
-              type-erasure wave
+              type-erasure wave json url
 
 # these are special cases, where /usr/lib name differs from Boost library name
 boost_lib_log := log log_setup
