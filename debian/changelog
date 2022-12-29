@@ -1,3 +1,10 @@
+boost1.81 (1.81.0-1) unstable; urgency=medium
+
+  * Upload into unstable.
+  * [da5bc00] Simplify d/rules
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 29 Dec 2022 16:28:04 +0100
+
 boost1.81 (1.81.0-1~exp1) experimental; urgency=medium
 
   * New 1.81.0 release.
