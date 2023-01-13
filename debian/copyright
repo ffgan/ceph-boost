@@ -20941,6 +20941,12 @@ Copyright:
 License: BSL-1.0
 
 Files:
+ libs/yap/example/autodiff_library/LICENSE
+Copyright:
+ 2014 Feng Qiang
+License: MIT
+
+Files:
  libs/numeric/conversion/doc/numeric_cast.qbk
  libs/numeric/conversion/doc/bounds.qbk
  libs/numeric/conversion/doc/definitions.qbk
@@ -47110,6 +47116,13 @@ Copyright:
  2004-2006, 2009 Trustees of Indiana University
  1997-2001 University of Notre Dame
 License: BSL-1.0
+
+Files:
+ tools/boostbook/xsl/caramel/LICENSE
+Copyright:
+ 2002-2003 Trustees of Indiana University
+ 2000-2001 University of Notre Dame
+License: Caramel
 
 Files:
  libs/graph/example/remove_edge_if_dir.cpp
