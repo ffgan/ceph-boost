@@ -1,96 +1,96 @@
 Tests: atomic
-Depends: libboost-atomic-dev, build-essential, cmake
+Depends: libboost-atomic1.81-dev, build-essential, cmake
 
 Tests: chrono
-Depends: libboost-chrono-dev, libboost-system-dev, build-essential, cmake
+Depends: libboost-chrono1.81-dev, libboost-system1.81-dev, build-essential, cmake
 
 Tests: context
-Depends: libboost-context-dev, build-essential, cmake
+Depends: libboost-context1.81-dev, build-essential, cmake
 
 Tests: container
-Depends: libboost-container-dev, libboost-system-dev, build-essential, cmake
+Depends: libboost-container1.81-dev, libboost-system1.81-dev, build-essential, cmake
 
 Tests: coroutine
-Depends: libboost-coroutine-dev, libboost-system-dev, build-essential, cmake
+Depends: libboost-coroutine1.81-dev, libboost-system1.81-dev, build-essential, cmake
 
 Tests: datetime
-Depends: libboost-date-time-dev, build-essential, cmake
+Depends: libboost-date1.81-time-dev, build-essential, cmake
 
 Tests: exception
-Depends: libboost-exception-dev, build-essential, cmake
+Depends: libboost-exception1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: fiber
-Depends: libboost-fiber-dev, build-essential, cmake
+Depends: libboost-fiber1.81-dev, build-essential, cmake
 
 Tests: filesystem
-Depends: libboost-filesystem-dev, build-essential, cmake
+Depends: libboost-filesystem1.81-dev, build-essential, cmake
 
 Tests: graph
-Depends: libboost-graph-dev, build-essential, cmake
+Depends: libboost-graph1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: graph-parallel
-Depends: libboost-graph-parallel-dev, libboost-mpi-dev, libboost-system-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Depends: libboost-graph1.81-parallel-dev, libboost-mpi1.81-dev, libboost-system1.81-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
 Restrictions: allow-stderr
 
 Tests: iostreams
-Depends: libboost-iostreams-dev, build-essential, cmake
+Depends: libboost-iostreams1.81-dev, build-essential, cmake
 
 Tests: locale
-Depends: libboost-locale-dev, build-essential, cmake
+Depends: libboost-locale1.81-dev, build-essential, cmake
 
 Tests: log
-Depends: libboost-log-dev, build-essential, cmake
+Depends: libboost-log1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: math
-Depends: libboost-math-dev, build-essential, cmake
+Depends: libboost-math1.81-dev, build-essential, cmake
 
 Tests: mpi
-Depends: libboost-mpi-dev, mpi-default-dev, build-essential, cmake
+Depends: libboost-mpi1.81-dev, mpi-default-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: mpi-python
-Depends: libboost-mpi-python-dev, mpi-default-dev, python3-minimal
+Depends: libboost-mpi1.81-python-dev, mpi-default-dev, python3-minimal
 Restrictions: allow-stderr
 
 Tests: program-options
-Depends: libboost-program-options-dev, build-essential, cmake
+Depends: libboost-program1.81-options-dev, build-essential, cmake
 
 Tests: python
-Depends: libboost-python-dev, python3-minimal, cmake, build-essential, clang
+Depends: libboost-python1.81-dev, python3-minimal, cmake, build-essential, clang
 Restrictions: allow-stderr
 
 Tests: random
-Depends: libboost-random-dev, build-essential, cmake
+Depends: libboost-random1.81-dev, build-essential, cmake
 
 Tests: regex
-Depends: libboost-regex-dev, build-essential, cmake, html2text
+Depends: libboost-regex1.81-dev, build-essential, cmake, html2text
 
 Tests: serialization
-Depends: libboost-serialization-dev, libboost-random-dev, build-essential, cmake
+Depends: libboost-serialization1.81-dev, libboost-random1.81-dev, build-essential, cmake
 
 Tests: stacktrace
-Depends: libboost-stacktrace-dev, libboost-system-dev, build-essential, cmake
+Depends: libboost-stacktrace1.81-dev, libboost-system1.81-dev, build-essential, cmake
 
 Tests: system
-Depends: libboost-system-dev, build-essential, cmake
+Depends: libboost-system1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: test
-Depends: libboost-test-dev, build-essential, cmake
+Depends: libboost-test1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: thread
-Depends: libboost-thread-dev, build-essential, cmake
+Depends: libboost-thread1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: timer
-Depends: libboost-timer-dev, build-essential, cmake
+Depends: libboost-timer1.81-dev, build-essential, cmake
 
 Tests: type-erasure
-Depends: libboost-type-erasure-dev, build-essential, cmake
+Depends: libboost-type1.81-erasure-dev, build-essential, cmake
 
 Tests: wave
-Depends: libboost-wave-dev, libboost-thread-dev, build-essential, cmake
+Depends: libboost-wave1.81-dev, libboost-thread1.81-dev, build-essential, cmake
