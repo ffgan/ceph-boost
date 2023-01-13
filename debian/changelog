@@ -43,7 +43,7 @@ boost1.74 (1.74.0-16) unstable; urgency=medium
 boost1.74 (1.74.0-15) unstable; urgency=medium
 
   [ Bernhard Übelacker ]
-  * [9826f74] Fix enums at i386. 
+  * [9826f74] Fix enums at i386.
   * [7f367ea] Add test for enums.
 
  -- Anton Gladky <gladk@debian.org>  Tue, 31 May 2022 06:52:56 +0200
@@ -76,7 +76,7 @@ boost1.74 (1.74.0-13) unstable; urgency=medium
     Cherry-pick upstream commits:
       - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
         Fix regex to allow search for python3.10 too (fixes e.g.
-        ros-image-common build) 
+        ros-image-common build)
 
  -- Anton Gladky <gladk@debian.org>  Fri, 19 Nov 2021 15:23:15 +0100
 
