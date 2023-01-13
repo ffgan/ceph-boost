@@ -1,3 +1,12 @@
+boost1.81 (1.81.0-2) unstable; urgency=medium
+
+  * [b340cb8] Fix autopkgtests. Use 1.81 version. (Closes: #1028390)
+  * [4835103] Avoid boost::phoenix::placeholders violations.
+  * [f09f5a5] Trim trailing whitespace.
+  * [f3a250a] Update standards version to 4.6.2, no changes needed.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 13 Jan 2023 07:45:19 +0100
+
 boost1.81 (1.81.0-1) unstable; urgency=medium
 
   * Upload into unstable.
