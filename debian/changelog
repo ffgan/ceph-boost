@@ -1,11 +1,16 @@
+boost1.81 (1.81.0-3) unstable; urgency=medium
+
+  * [3e9adf8] Fix MPI python module.
+  * [b85ba46] Fix python extensions.
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 14 Jan 2023 22:33:10 +0100
+
 boost1.81 (1.81.0-2) unstable; urgency=medium
 
   * [b340cb8] Fix autopkgtests. Use 1.81 version. (Closes: #1028390)
   * [4835103] Avoid boost::phoenix::placeholders violations.
   * [f09f5a5] Trim trailing whitespace.
   * [f3a250a] Update standards version to 4.6.2, no changes needed.
-  * [3e9adf8] Fix MPI python module.
-  * [b85ba46] Fix python extensions.
 
  -- Anton Gladky <gladk@debian.org>  Fri, 13 Jan 2023 07:45:19 +0100
 
