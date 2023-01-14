@@ -14,7 +14,7 @@ Tests: coroutine
 Depends: libboost-coroutine1.81-dev, libboost-system1.81-dev, build-essential, cmake
 
 Tests: datetime
-Depends: libboost-date1.81-time-dev, build-essential, cmake
+Depends: libboost-date-time1.81-dev, build-essential, cmake
 
 Tests: exception
 Depends: libboost-exception1.81-dev, build-essential, cmake
@@ -31,7 +31,7 @@ Depends: libboost-graph1.81-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: graph-parallel
-Depends: libboost-graph1.81-parallel-dev, libboost-mpi1.81-dev, libboost-system1.81-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Depends: libboost-graph-parallel1.81-dev, libboost-mpi1.81-dev, libboost-system1.81-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
 Restrictions: allow-stderr
 
 Tests: iostreams
@@ -52,11 +52,11 @@ Depends: libboost-mpi1.81-dev, mpi-default-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: mpi-python
-Depends: libboost-mpi1.81-python-dev, mpi-default-dev, python3-minimal
+Depends: libboost-mpi-python1.81-dev, mpi-default-dev, python3-minimal
 Restrictions: allow-stderr
 
 Tests: program-options
-Depends: libboost-program1.81-options-dev, build-essential, cmake
+Depends: libboost-program-options1.81-dev, build-essential, cmake
 
 Tests: python
 Depends: libboost-python1.81-dev, python3-minimal, cmake, build-essential, clang
@@ -90,7 +90,7 @@ Tests: timer
 Depends: libboost-timer1.81-dev, build-essential, cmake
 
 Tests: type-erasure
-Depends: libboost-type1.81-erasure-dev, build-essential, cmake
+Depends: libboost-type-erasure1.81-dev, build-essential, cmake
 
 Tests: wave
 Depends: libboost-wave1.81-dev, libboost-thread1.81-dev, build-essential, cmake
