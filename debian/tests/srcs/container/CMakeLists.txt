@@ -7,3 +7,5 @@ INCLUDE_DIRECTORIES (${Boost_INCLUDE_DIRS})
 ADD_EXECUTABLE(demo1 demo1.cpp)
 
 ADD_EXECUTABLE(demo2 demo2.cpp)
+
+ADD_EXECUTABLE(demo3 demo3.cpp)
