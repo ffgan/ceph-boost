@@ -15,7 +15,7 @@ struct Var
     float value;
 };
 
-enum class Enum { VALUE_A, VALUE_B = 0x7fffffff };
+enum class Enum { VALUE_A, VALUE_B};
 
 #include <boost/python.hpp>
 using namespace boost::python;
