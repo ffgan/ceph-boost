@@ -1,3 +1,10 @@
+boost1.81 (1.81.0-4) unstable; urgency=medium
+
+  * [81c9de9] Add atomic as a dep of filesystem.
+  * [3ba2aa9] Fix arm* autopkgtest.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 15 Jan 2023 12:20:40 +0100
+
 boost1.81 (1.81.0-3) unstable; urgency=medium
 
   * [3e9adf8] Fix MPI python module.
