@@ -1,3 +1,10 @@
+boost1.81 (1.81.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream
+
+ -- Adam Kraitman <akraitma@redhat.com>  Tue, 14 Mar 2023 17:20:00 +0200
+
 boost1.79 (1.79.0-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
