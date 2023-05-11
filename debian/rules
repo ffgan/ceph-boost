@@ -136,9 +136,9 @@ mk_debhelper_files = \
 		) \
 	)
 
-# use g++-9 by default
+# use g++-11 by default
 ifeq (,$(filter gcc=%,$(DEB_BUILD_OPTIONS)))
-  gcc := /usr/bin/g++-9
+  gcc := /usr/bin/g++-11
 else
   gcc := /usr/bin/g++-$(patsubst gcc=%,%,$(filter gcc=%,$(DEB_BUILD_OPTIONS)))
 endif
