@@ -1,3 +1,11 @@
+boost1.81 (1.81.0-5) unstable; urgency=medium
+
+  * [0330664] Better handling of the upstream version number
+  * [08cdf38] Add libboost-url1.81.0 to deps of libboost-url1.81-dev.
+              (Closes: #1035864)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 14 May 2023 22:52:13 +0200
+
 boost1.81 (1.81.0-4) unstable; urgency=medium
 
   * [81c9de9] Add atomic as a dep of filesystem.
