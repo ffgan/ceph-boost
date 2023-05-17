@@ -2,11 +2,7 @@ Source: boost1.82
 Homepage: https://www.boost.org/
 Section: libs
 Priority: optional
-Maintainer: Debian Boost Team <team+boost@tracker.debian.org>
-Uploaders:
- Steve M. Robbins <smr@debian.org>,
- Giovanni Mascellani <gio@debian.org>,
- Anton Gladky <gladk@debian.org>
+Maintainer: Ceph Developers <dev@ceph.io>
 Build-Depends: debhelper-compat (= 12), dpkg-dev (>= 1.16.1~), dctrl-tools, chrpath,
  zlib1g-dev, libbz2-dev, liblzma-dev, libzstd-dev, libicu-dev (>= 63.1), mpi-default-dev,
  bison, flex, docbook-to-man, help2man, xsltproc, doxygen,
