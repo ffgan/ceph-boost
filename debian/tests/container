@@ -25,3 +25,8 @@ echo "run: demo1 OK"
 ./demo2
 
 echo "run: demo2 OK"
+
+[ -x demo3 ]
+./demo3
+
+echo "run: demo3 OK"

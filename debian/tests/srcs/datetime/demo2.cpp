@@ -1,73 +1,100 @@
-// https://www.boost.org/doc/libs/1_67_0/doc/html/date_time/examples.html#date_time.examples.print_holidays
-
-/* Generate a set of dates using a collection of date generators
-   * Output looks like:
-   * Enter Year: 2002
-   * 2002-Jan-01 [Tue]
-   * 2002-Jan-21 [Mon]
-   * 2002-Feb-12 [Tue]
-   * 2002-Jul-04 [Thu]
-   * 2002-Sep-02 [Mon]
-   * 2002-Nov-28 [Thu]
-   * 2002-Dec-25 [Wed]
-   * Number Holidays: 7
-   */
+/* The following shows the creation of a facet for the output of 
+ * dates in German (please forgive me for any errors in my German --
+ * I'm not a native speaker).
+ */
 
 #include "boost/date_time/gregorian/gregorian.hpp"
-#include <algorithm>
-#include <functional>
-#include <vector>
 #include <iostream>
-#include <set>
+#include <algorithm>
 
-void print_date(boost::gregorian::date d)
+/* Define a series of char arrays for short and long name strings 
+ * to be associated with German date output (US names will be 
+ * retrieved from the locale). */
+const char* const de_short_month_names[] = 
 {
-    using namespace boost::gregorian;
-#if defined(BOOST_DATE_TIME_NO_LOCALE)
-    std::cout << to_simple_string(d) << " [" << d.day_of_week() << "]\n";
-#else
-    std::cout << d << " [" << d.day_of_week() << "]\n";
-#endif
+  "Jan", "Feb", "Mar", "Apr", "Mai", "Jun",
+  "Jul", "Aug", "Sep", "Okt", "Nov", "Dez", "NAM" 
+};
+const char* const de_long_month_names[] =
+{
+  "Januar", "Februar", "Marz", "April", "Mai",
+  "Juni", "Juli", "August", "September", "Oktober",
+  "November", "Dezember", "NichtDerMonat"
+};
+const char* const de_long_weekday_names[] = 
+{
+  "Sonntag", "Montag", "Dienstag", "Mittwoch",
+  "Donnerstag", "Freitag", "Samstag"
+};
+const char* const de_short_weekday_names[] =
+{
+  "Son", "Mon", "Die","Mit", "Don", "Fre", "Sam"
+};
+
+
+int main() 
+{
+  using namespace boost::gregorian;
+ 
+  // create some gregorian objects to output
+  date d1(2002, Oct, 1);
+  greg_month m = d1.month();
+  greg_weekday wd = d1.day_of_week();
+  
+  // create a facet and a locale for German dates
+  date_facet* german_facet = new date_facet();
+  std::cout.imbue(std::locale(std::locale::classic(), german_facet));
+
+  // create the German name collections
+  date_facet::input_collection_type short_months, long_months, 
+                                    short_weekdays, long_weekdays;
+  std::copy(&de_short_month_names[0], &de_short_month_names[11],
+            std::back_inserter(short_months));
+  std::copy(&de_long_month_names[0], &de_long_month_names[11],
+            std::back_inserter(long_months));
+  std::copy(&de_short_weekday_names[0], &de_short_weekday_names[6],
+            std::back_inserter(short_weekdays));
+  std::copy(&de_long_weekday_names[0], &de_long_weekday_names[6],
+            std::back_inserter(long_weekdays));
+
+  // replace the default names with ours
+  // NOTE: date_generators and special_values were not replaced as 
+  // they are not used in this example
+  german_facet->short_month_names(short_months);
+  german_facet->long_month_names(long_months);
+  german_facet->short_weekday_names(short_weekdays);
+  german_facet->long_weekday_names(long_weekdays);
+  
+  // output the date in German using short month names
+  german_facet->format("%d.%m.%Y");
+  std::cout << d1 << std::endl; //01.10.2002
+  
+  german_facet->month_format("%B");
+  std::cout << m << std::endl; //Oktober
+  
+  german_facet->weekday_format("%A");
+  std::cout << wd << std::endl; //Dienstag
+
+
+  // Output the same gregorian objects using US names
+  date_facet* us_facet = new date_facet();
+  std::cout.imbue(std::locale(std::locale::classic(), us_facet)); 
+
+  us_facet->format("%m/%d/%Y");
+  std::cout << d1 << std::endl; //  10/01/2002
+  
+  // English names, ISO 8601 order (year-month-day), '-' separator
+  us_facet->format("%Y-%b-%d");
+  std::cout << d1 << std::endl; //  2002-Oct-01
+  
+  return 0;
+
 }
 
-int main()
-{
+/*  Copyright 2001-2005: CrystalClear Software, Inc
+ *  http://www.crystalclearsoftware.com
+ *
+ *  Subject to the Boost Software License, Version 1.0.
+ * (See accompanying file LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
+ */
 
-    const int year = 2018;
-    std::cout << "Year: " << year;
-
-    using namespace boost::gregorian;
-
-    //define a collection of holidays fixed by month and day
-    std::vector<year_based_generator *> holidays;
-    holidays.push_back(new partial_date(1, Jan));  //Western New Year
-    holidays.push_back(new partial_date(4, Jul));  //US Independence Day
-    holidays.push_back(new partial_date(25, Dec)); //Christmas day
-
-    //define a shorthand for the nth_day_of_the_week_in_month function object
-    typedef nth_day_of_the_week_in_month nth_dow;
-
-    //US labor day
-    holidays.push_back(new nth_dow(nth_dow::first, Monday, Sep));
-    //MLK Day
-    holidays.push_back(new nth_dow(nth_dow::third, Monday, Jan));
-    //Pres day
-    holidays.push_back(new nth_dow(nth_dow::second, Tuesday, Feb));
-    //Thanksgiving
-    holidays.push_back(new nth_dow(nth_dow::fourth, Thursday, Nov));
-
-    typedef std::set<date> date_set;
-    date_set all_holidays;
-
-    for (std::vector<year_based_generator *>::iterator it = holidays.begin();
-         it != holidays.end(); ++it)
-    {
-        all_holidays.insert((*it)->get_date(year));
-    }
-
-    //print the holidays to the screen
-    std::for_each(all_holidays.begin(), all_holidays.end(), print_date);
-    std::cout << "Number Holidays: " << all_holidays.size() << std::endl;
-
-    return 0;
-}

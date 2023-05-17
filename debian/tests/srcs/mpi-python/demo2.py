@@ -5,8 +5,8 @@ import boost.mpi as mpi
 if mpi.world.rank == 0:
     mpi.world.send(1, 0, 'Hello')
     msg = mpi.world.recv(1, 1)
-    print msg, '!'
+    print(msg, '!')
 else:
     msg = mpi.world.recv(0, 0)
-    print (msg + ', '),
+    print((msg + ', '), end=' ')
     mpi.world.send(0, 1, 'world')

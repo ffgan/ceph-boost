@@ -1,40 +1,40 @@
 Source: boost1.82
-Homepage: http://www.boost.org/
+Homepage: https://www.boost.org/
 Section: libs
 Priority: optional
 Maintainer: Debian Boost Team <team+boost@tracker.debian.org>
 Uploaders:
  Steve M. Robbins <smr@debian.org>,
  Giovanni Mascellani <gio@debian.org>,
- Dimitri John Ledkov <xnox@ubuntu.com>,
  Anton Gladky <gladk@debian.org>
-Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1~), dctrl-tools, chrpath,
- zlib1g-dev, libbz2-dev, libicu-dev (>= 55),
+Build-Depends: debhelper-compat (= 12), dpkg-dev (>= 1.16.1~), dctrl-tools, chrpath,
+ zlib1g-dev, libbz2-dev, liblzma-dev, libzstd-dev, libicu-dev (>= 63.1), mpi-default-dev,
  bison, flex, docbook-to-man, help2man, xsltproc, doxygen,
  dh-python,
- g++ (>= 7),
- python3, python3-all-dev (>= 3.1)
+ g++ (>= 4:5-0),
+ python3, python3-all-dev (>= 3.1), python3-numpy
 Build-Depends-Indep: graphviz
 Build-Conflicts: libopenmpi-dev (= 1.3.2-2)
 X-Python3-Version: >= 3.6
 Vcs-Browser: https://salsa.debian.org/debian/boost
 Vcs-Git: https://salsa.debian.org/debian/boost.git
-Standards-Version: 4.1.1
+Standards-Version: 4.6.2
 
 Package: ceph-libboost1.82-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, libstdc++-4.8-dev | libstdc++-dev
+Depends: ${misc:Depends}, ${shlibs:Depends}, libstdc++-${gxx:major}-dev
 Suggests: ceph-libboost1.82-doc,
  ceph-libboost-atomic1.82-dev,
  ceph-libboost-chrono1.82-dev,
  ceph-libboost-container1.82-dev,
- ceph-libboost-context1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
- ceph-libboost-coroutine1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
+ ceph-libboost-context1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
+ ceph-libboost-contract1.82-dev,
+ ceph-libboost-coroutine1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
  ceph-libboost-date-time1.82-dev,
  ceph-libboost-exception1.82-dev,
- ceph-libboost-fiber1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
+ ceph-libboost-fiber1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
  ceph-libboost-filesystem1.82-dev,
  ceph-libboost-graph1.82-dev,
  ceph-libboost-graph-parallel1.82-dev,
@@ -42,6 +42,9 @@ Suggests: ceph-libboost1.82-doc,
  ceph-libboost-locale1.82-dev,
  ceph-libboost-log1.82-dev,
  ceph-libboost-math1.82-dev,
+ ceph-libboost-mpi1.82-dev,
+ ceph-libboost-mpi-python1.82-dev,
+ ceph-libboost-numpy1.82-dev,
  ceph-libboost-program-options1.82-dev,
  ceph-libboost-python1.82-dev,
  ceph-libboost-random1.82-dev,
@@ -55,7 +58,8 @@ Suggests: ceph-libboost1.82-doc,
  ceph-libboost-type-erasure1.82-dev,
  ceph-libboost-wave1.82-dev,
  ceph-libboost1.82-tools-dev,
- libmpfrc++-dev, libntl-dev
+ libmpfrc++-dev, libntl-dev,
+ ceph-libboost-nowide1.82-dev
 Description: Boost C++ Libraries development files
  The Boost web site provides free, peer-reviewed, portable C++ source
  libraries. The emphasis is on libraries which work well with the C++
@@ -70,8 +74,6 @@ Description: Boost C++ Libraries development files
  Extended precision arithmetic package libmpfrc++-dev or libntl-dev is
  required to use the Boost.Multiprecision wrapping of the respective
  library.
-Conflicts: ceph-libboost1.67-dev
-Replaces: ceph-libboost1.67-dev
 
 Package: ceph-libboost1.82-tools-dev
 Architecture: any
@@ -95,8 +97,6 @@ Description: Boost C++ Libraries development tools
  .
  This package provides the auxiliary tools bjam, Boost.Build, bcp,
  inspect, boostbook and quickbook.
-Conflicts: ceph-libboost1.67-tools-dev
-Replaces: ceph-libboost1.67-tools-dev
 
 Package: ceph-libboost1.82-all-dev
 Architecture: any
@@ -107,11 +107,11 @@ Depends: ${misc:Depends},
  ceph-libboost-atomic1.82-dev,
  ceph-libboost-chrono1.82-dev,
  ceph-libboost-container1.82-dev,
- ceph-libboost-context1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
- ceph-libboost-coroutine1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
+ ceph-libboost-context1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
+ ceph-libboost-coroutine1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
  ceph-libboost-date-time1.82-dev,
  ceph-libboost-exception1.82-dev,
- ceph-libboost-fiber1.82-dev [any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el],
+ ceph-libboost-fiber1.82-dev [i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x],
  ceph-libboost-filesystem1.82-dev,
  ceph-libboost-graph1.82-dev,
  ceph-libboost-graph-parallel1.82-dev,
@@ -119,6 +119,9 @@ Depends: ${misc:Depends},
  ceph-libboost-locale1.82-dev,
  ceph-libboost-log1.82-dev,
  ceph-libboost-math1.82-dev,
+ ceph-libboost-mpi1.82-dev,
+ ceph-libboost-mpi-python1.82-dev,
+ ceph-libboost-numpy1.82-dev,
  ceph-libboost-program-options1.82-dev,
  ceph-libboost-python1.82-dev,
  ceph-libboost-random1.82-dev,
@@ -130,7 +133,8 @@ Depends: ${misc:Depends},
  ceph-libboost-thread1.82-dev,
  ceph-libboost-timer1.82-dev,
  ceph-libboost-type-erasure1.82-dev,
- ceph-libboost-wave1.82-dev
+ ceph-libboost-wave1.82-dev,
+ ceph-libboost-nowide1.82-dev
 Description: Boost C++ Libraries development files (ALL)
  The Boost web site provides free, peer-reviewed, portable C++ source
  libraries. The emphasis is on libraries which work well with the C++
@@ -158,7 +162,6 @@ Package: ceph-libboost-atomic1.82.0
 Homepage: http://www.boost.org/libs/atomic/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: atomic data types, operations, and memory ordering constraints
@@ -204,14 +207,11 @@ Description: atomic data types, operations, and memory ordering constraints
  possible (via inline assembler, platform libraries or compiler
  intrinsics), and falls back to "emulating" atomic operations through
  locking.
-Conflicts: ceph-libboost-atomic1.82-dev
-Replaces: ceph-libboost-atomic1.82-dev
 
 Package: ceph-libboost-chrono1.82.0
 Homepage: http://www.boost.org/libs/chrono/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ representation of time duration, time point, and clocks
@@ -296,14 +296,11 @@ Description: C++ representation of time duration, time point, and clocks
  .
  Lastly, Boost.Chrono includes typeof registration for duration and
  time_point to permit using emulated auto with C++03 compilers.
-Conflicts: ceph-libboost-chrono1.67-dev
-Replaces: ceph-libboost-chrono1.67-dev
 
 Package: ceph-libboost-container1.82.0
 Homepage: http://boost.org/libs/container/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ library that implements several well-known containers
@@ -367,14 +364,11 @@ Description: C++ library that implements several well-known containers - dev fil
       stability in insertions and erasures.
     * slist: the classic pre-standard singly linked list implementation
       offering constant-time size(). Note that C++11 forward_list has no size().
-Conflicts: ceph-libboost-container1.67-dev
-Replaces: ceph-libboost-container1.67-dev
 
 Package: ceph-libboost-context1.82.0
 Homepage: http://www.boost.org/libs/context/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: provides a sort of cooperative multitasking on a single thread
@@ -392,7 +386,7 @@ Description: provides a sort of cooperative multitasking on a single thread
 
 Package: ceph-libboost-context1.82-dev
 Homepage: http://www.boost.org/libs/context/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
@@ -411,14 +405,11 @@ Description: provides a sort of cooperative multitasking on a single thread
  path. This is useful for building higher-level abstractions, like
  coroutines, cooperative threads (userland threads) or an equivalent
  to C# keyword yield in C++.
-Conflicts: ceph-libboost-context1.67-dev
-Replaces: ceph-libboost-context1.67-dev
 
 Package: ceph-libboost-contract1.82.0
 Homepage: http://boost.org/libs/contract/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Contract library for C++
@@ -446,14 +437,11 @@ Description: Contract library for C++ - dev files
  preconditions, customizable actions on assertion failure (e.g.,
  terminate or throw), optional compilation and checking of assertions,
  etc.
-Conflicts: ceph-libboost-contract1.67-dev
-Replaces: ceph-libboost-contract1.67-dev
 
 Package: ceph-libboost-coroutine1.82.0
 Homepage: http://www.boost.org/libs/coroutine/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: provides a sort of cooperative multitasking on a single thread
@@ -476,7 +464,7 @@ Description: provides a sort of cooperative multitasking on a single thread
 
 Package: ceph-libboost-coroutine1.82-dev
 Homepage: http://www.boost.org/libs/coroutine/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
@@ -500,14 +488,11 @@ Description: provides a sort of cooperative multitasking on a single thread
  kernel is not involved in the coroutine switches.
  .
  The implementation uses Boost.Context for context switching.
-Conflicts: ceph-libboost-coroutine1.67-dev
-Replaces: ceph-libboost-coroutine1.67-dev
 
 Package: ceph-libboost-date-time1.82.0
 Homepage: http://www.boost.org/libs/date_time/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: set of date-time libraries based on generic programming concepts
@@ -530,8 +515,6 @@ Description: set of date-time libraries based on generic programming concepts
  .
  These libraries are intended to make programming with dates and times
  almost as simple and natural as programming with strings and integers.
-Conflicts: ceph-libboost-date-time1.67-dev
-Replaces: ceph-libboost-date-time1.67-dev
 
 Package: ceph-libboost-exception1.82-dev
 Homepage: http://www.boost.org/libs/exception/
@@ -546,14 +529,11 @@ Description: library to help write exceptions and handlers
  The purpose of Boost Exception is to ease the design of exception
  class hierarchies and to help write exception handling and error
  reporting code.
-Conflicts: ceph-libboost-exception1.67-dev
-Replaces: ceph-libboost-exception1.67-dev
 
 Package: ceph-libboost-fiber1.82.0
 Homepage: http://www.boost.org/libs/fiber/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: cooperatively-scheduled micro-/userland-threads
@@ -581,7 +561,7 @@ Description: cooperatively-scheduled micro-/userland-threads
 
 Package: ceph-libboost-fiber1.82-dev
 Homepage: http://www.boost.org/libs/fiber/
-Architecture: any-i386 any-amd64 armel armhf arm64 mips mipsel powerpc ppc64el
+Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64 armel armhf arm64 mips mipsel mips64el powerpc ppc64el riscv64 s390x
 Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
@@ -611,14 +591,11 @@ Description: cooperatively-scheduled micro-/userland-threads
  between threads usually costs thousands of CPU cycles on x86,
  compared to a fiber switch with less than a hundred cycles. A fiber
  runs on a single thread at any point in time.
-Conflicts: ceph-libboost-fiber1.67-dev
-Replaces: ceph-libboost-fiber1.67-dev
 
 Package: ceph-libboost-filesystem1.82.0
 Homepage: http://boost.org/libs/filesystem/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: filesystem operations (portable paths, iteration over directories, etc) in C++
@@ -643,14 +620,11 @@ Description: filesystem operations (portable paths, iteration over directories, 
  The Boost Filesystem Library provides portable facilities to query and
  manipulate paths, files, and directories.  The goal is to
  facilitate portable script-like operations from within C++ programs.
-Conflicts: ceph-libboost-filesystem1.67-dev
-Replaces: ceph-libboost-filesystem1.67-dev
 
 Package: ceph-libboost-graph1.82.0
 Homepage: http://www.boost.org/libs/graph/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: graphviz
@@ -682,13 +656,10 @@ Description: generic graph components and algorithms in C++
  abstractions must also be represented in computer programs. A
  standardized generic interface for traversing graphs is of utmost
  importance to encourage reuse of graph algorithms and data structures.
-Conflicts: ceph-libboost-graph1.67-dev
-Replaces: ceph-libboost-graph1.67-dev
 
 Package: ceph-libboost-graph-parallel1.82.0
 Homepage: http://www.boost.org/libs/graph_parallel/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: graphviz
@@ -720,14 +691,11 @@ Description: generic graph components and algorithms in C++
  parallel algorithms that exploit fine-grained parallelism, while retaining
  the same interfaces as the (sequential) BGL. Code written using the sequential
  BGL should be easy to parallelize with the parallel BGL.
-Conflicts: ceph-libboost-graph-parallel1.67-dev
-Replaces: ceph-libboost-graph-parallel1.67-dev
 
 Package: ceph-libboost-iostreams1.82.0
 Homepage: http://www.boost.org/libs/iostreams/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost.Iostreams Library
@@ -753,14 +721,11 @@ Description: Boost.Iostreams Library development files
  Boost.Iostreams are a collection of concepts and a set of templates
  which turn models of these concepts into C++ standard library streams
  and stream buffers.
-Conflicts: ceph-libboost-iostreams1.67-dev
-Replaces: ceph-libboost-iostreams1.67-dev
 
 Package: ceph-libboost-locale1.82.0
 Homepage: http://www.boost.org/libs/locale/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ facilities for localization
@@ -817,13 +782,10 @@ Description: C++ facilities for localization
   * Transparent support for 8-bit character sets like Latin1
   * Support for char and wchar_t
   * Experimental support for C++0x char16_t and char32_t strings and streams.
-Conflicts: ceph-libboost-locale1.67-dev
-Replaces: ceph-libboost-locale1.67-dev
 
 Package: ceph-libboost-log1.82.0
 Homepage: http://www.boost.org/libs/log/
 Architecture: any
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ logging library
  This package forms part of the Boost C++ Libraries collection.
@@ -867,14 +829,11 @@ Description: C++ logging library
  library for collecting and storing information into logs.
   * Performance. The library should have as little performance impact on
  the user's application as possible.
-Conflicts: ceph-libboost-log1.67-dev
-Replaces: ceph-libboost-log1.67-dev
 
 Package: ceph-libboost-math1.82.0
 Homepage: http://www.boost.org/libs/math/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost.Math Library
@@ -912,14 +871,149 @@ Description: Boost.Math Library development files
     C++ Library Extensions.
   * Implementation Toolkit: Provides many of the tools required to implement
     mathematical special functions.
-Conflicts: ceph-libboost-math1.67-dev
-Replaces: ceph-libboost-math1.67-dev
+
+Package: ceph-libboost-mpi1.82.0
+Homepage: http://www.boost.org/doc/html/mpi.html
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: C++ interface to the Message Passing Interface (MPI)
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost.MPI library provides a C++ interface to MPI that
+ supports modern C++ development styles, including complete support for
+ user-defined data types and C++ Standard Library types, arbitrary function
+ objects for collective algorithms, and the use of modern C++ library
+ techniques to maintain maximal efficiency.
+
+Package: ceph-libboost-mpi1.82-dev
+Homepage: http://www.boost.org/doc/html/mpi.html
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost1.82-dev (= ${binary:Version}),
+ ceph-libboost-serialization1.82-dev (= ${binary:Version}),
+ ceph-libboost-mpi1.82.0 (= ${binary:Version}),
+ mpi-default-dev
+Suggests: ceph-libboost-graph1.82-dev
+Description: C++ interface to the Message Passing Interface (MPI)
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost.MPI library provides a C++ interface to MPI that
+ supports modern C++ development styles, including complete support for
+ user-defined data types and C++ Standard Library types, arbitrary function
+ objects for collective algorithms, and the use of modern C++ library
+ techniques to maintain maximal efficiency.
+
+Package: ceph-libboost-mpi-python1.82.0
+Homepage: http://www.boost.org/doc/html/mpi/python.html
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}, mpi-default-bin
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: python3
+Provides: ${boost:Provides}
+Description: C++ interface to the Message Passing Interface (MPI), Python Bindings
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost.MPI library provides a C++ interface to MPI that
+ supports modern C++ development styles, including complete support for
+ user-defined data types and C++ Standard Library types, arbitrary function
+ objects for collective algorithms, and the use of modern C++ library
+ techniques to maintain maximal efficiency.
+ .
+ This package provides Python Bindings to the C++ interface.
+ .
+ One of the python interpreter packages is required to use the bindings.
+
+Package: ceph-libboost-mpi-python1.82-dev
+Homepage: http://www.boost.org/doc/html/mpi/python.html
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost-mpi1.82-dev (= ${binary:Version}),
+ ceph-libboost-mpi-python1.82.0 (= ${binary:Version})
+Description: C++ interface to the Message Passing Interface (MPI), Python Bindings
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost.MPI library provides a C++ interface to MPI that
+ supports modern C++ development styles, including complete support for
+ user-defined data types and C++ Standard Library types, arbitrary function
+ objects for collective algorithms, and the use of modern C++ library
+ techniques to maintain maximal efficiency.
+ .
+ This package provides Python Bindings to the C++ interface.
+
+Package: ceph-libboost-nowide1.82.0
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: python3
+Provides: ${boost:Provides}
+Description: Standard library functions with UTF-8 API on Windows
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The library provides an implementation of standard C and C++
+ library functions which are UTF-8 aware on Windows without
+ requiring to use the Wipe API.
+ .
+ On POSIX platforms, where UTF-8 is already commonly used, the
+ calls in Nowide just alias to their standard counterparts.
+
+Package: ceph-libboost-nowide1.82-dev
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost-nowide1.82.0 (= ${binary:Version})
+Suggests: ceph-libboost1.82-doc
+Description: Standard library functions with UTF-8 API on Windows development files
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The library provides an implementation of standard C and C++
+ library functions which are UTF-8 aware on Windows without
+ requiring to use the Wipe API.
+ .
+ On POSIX platforms, where UTF-8 is already commonly used, the
+ calls in Nowide just alias to their standard counterparts.
+
+Package: ceph-libboost-numpy1.82.0
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: python3
+Provides: ${boost:Provides}
+Description: Boost.Python NumPy extensions
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost Python library enables exporting a C++ library to Python.
+ The NumPy extensions lets the C++ code interact with NumPy types.
+ .
+ One of the python interpreter packages is required to use the
+ created extensions.
+
+Package: ceph-libboost-numpy1.82-dev
+Homepage: http://www.boost.org/libs/python/
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost-numpy1.82.0 (= ${binary:Version})
+Suggests: ceph-libboost1.82-doc
+Description: Boost.Python NumPy extensions development files
+ This package forms part of the Boost C++ Libraries collection.
+ .
+ The Boost Python library enables exporting a C++ library to Python.
+ The NumPy extensions lets the C++ code interact with NumPy types.
+ .
+ This package allows development of a Python interface for all current
+ versions of Python in Debian.  Code using this library will need also
+ one of the Python development packages.
 
 Package: ceph-libboost-program-options1.82.0
 Homepage: http://www.boost.org/libs/program_options/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: program options library for C++
@@ -943,17 +1037,14 @@ Description: program options library for C++
  Library to let program developers obtain program options, that is
  (name, value) pairs from the user, via conventional methods such as
  command line and config file.
-Conflicts: ceph-libboost-program-options1.67-dev
-Replaces: ceph-libboost-program-options1.67-dev
 
 Package: ceph-libboost-python1.82.0
 Homepage: http://www.boost.org/libs/python/
 Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, ${python:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${python3:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Suggests: python3
-Breaks: ${python:Breaks}
+Breaks: ${python3:Breaks}
 Provides: ${boost:Provides}
 Description: Boost.Python Library
  This package forms part of the Boost C++ Libraries collection.
@@ -1005,7 +1096,6 @@ Package: ceph-libboost-random1.82.0
 Homepage: http://www.boost.org/libs/random/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Boost Random Number Library
@@ -1037,7 +1127,6 @@ Package: ceph-libboost-regex1.82.0
 Homepage: http://www.boost.org/libs/regex/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Provides: ${boost:Provides}
@@ -1084,7 +1173,6 @@ Package: ceph-libboost-serialization1.82.0
 Homepage: http://www.boost.org/libs/serialization/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: serialization library for C++
@@ -1131,7 +1219,6 @@ Package: ceph-libboost-stacktrace1.82.0
 Homepage: http://boost.org/libs/stacktrace/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: library to capture and print stack traces
@@ -1153,14 +1240,11 @@ Description: library to capture and print stack traces - development files
  .
  Boost.Stacktrace library is a simple C++03 library that provides
  information about call sequence in a human-readable form.
-Conflicts: ceph-libboost-stacktrace1.67-dev
-Replaces: ceph-libboost-stacktrace1.67-dev
 
 Package: ceph-libboost-system1.82.0
 Homepage: http://www.boost.org/libs/system/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Operating system (e.g. diagnostics support) library
@@ -1199,7 +1283,6 @@ Package: ceph-libboost-test1.82.0
 Homepage: http://www.boost.org/libs/test/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: components for writing and executing test suites
@@ -1232,7 +1315,6 @@ Package: ceph-libboost-thread1.82.0
 Homepage: http://www.boost.org/libs/thread/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: portable C++ multi-threading
@@ -1269,7 +1351,6 @@ Package: ceph-libboost-timer1.82.0
 Homepage: http://www.boost.org/libs/timer/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ wall clock and CPU process timers
@@ -1311,7 +1392,6 @@ Package: ceph-libboost-type-erasure1.82.0
 Homepage: http://www.boost.org/doc/libs/1_60_0/doc/html/boost_typeerasure.html
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C++ runtime polymorphism based on concepts
@@ -1339,14 +1419,11 @@ Description: C++ runtime polymorphism based on concepts
  each of which has its own advantages and disadvantages.  The Boost.TypeErasure
  library combines the superior abstraction capabilities of templates, with the
  runtime flexibility of virtual functions.
-Conflicts: ceph-libboost-type-erasure1.67-dev
-Replaces: ceph-libboost-type-erasure1.67-dev
 
 Package: ceph-libboost-wave1.82.0
 Homepage: http://www.boost.org/libs/wave/
 Architecture: any
 Multi-Arch: same
-Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: C99/C++ preprocessor library
@@ -1374,5 +1451,77 @@ Description: C99/C++ preprocessor library
  implementation of the mandated C99/C++ preprocessor functionality
  packed behind a simple to use interface, which integrates well with
  the well known idioms of the Standard Template Library (STL).
-Conflicts: ceph-libboost-wave1.67-dev
-Replaces: ceph-libboost-wave1.67-dev
+
+Package: ceph-libboost-json1.82.0
+Homepage: https://www.boost.org/doc/libs/release/libs/json/
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: C++ containers and algorithms that implement JSON
+ This library focuses on a common and popular use-case: parsing
+ and serializing to and from a container called value which holds
+ JSON types.
+ .
+ Any value which you build can be serialized and then deserialized,
+ guaranteeing that the result will be equal to the original value.
+ Whatever JSON output you produce with this library will be readable
+ by most common JSON implementations in any language.
+
+Package: ceph-libboost-json1.82-dev
+Homepage: https://www.boost.org/doc/libs/release/libs/json/
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost1.21-dev (= ${binary:Version}),
+ ceph-libboost-container1.82-dev (= ${binary:Version}),
+ ceph-libboost-system1.82-dev (= ${binary:Version})
+Description: C++ containers and algorithms that implement JSON
+ This library focuses on a common and popular use-case: parsing
+ and serializing to and from a container called value which holds
+ JSON types.
+ .
+ Any value which you build can be serialized and then deserialized,
+ guaranteeing that the result will be equal to the original value.
+ Whatever JSON output you produce with this library will be readable
+ by most common JSON implementations in any language.
+
+Package: ceph-libboost-url1.82.0
+Homepage: https://www.boost.org/doc/libs/release/libs/url/
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: C++ library that implements "URL"
+ C++ library which provides containers and algorithms which model a "URL,"
+ the Uniform Resource Identifier (URI) specification (henceforth referred to
+ as rfc3986).
+ .
+ A URL is a compact sequence of characters that identifies an abstract or
+ physical resource.
+ .
+ This library understands the grammars related to URLs and provides
+ functionality to validate, parse, examine, and modify urls, and apply
+ normalization or resolution algorithms.
+
+Package: ceph-libboost-url1.82-dev
+Homepage: https://www.boost.org/doc/libs/release/libs/url/
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends},
+ ceph-libboost1.82-dev (= ${binary:Version}),
+ ceph-libboost-system1.82-dev (= ${binary:Version}),
+ ceph-libboost-url1.82.0 (= ${binary:Version})
+Description: C++ library that implements "URL"
+ C++ library which provides containers and algorithms which model a "URL,"
+ the Uniform Resource Identifier (URI) specification (henceforth referred to
+ as rfc3986).
+ .
+ A URL is a compact sequence of characters that identifies an abstract or
+ physical resource.
+ .
+ This library understands the grammars related to URLs and provides
+ functionality to validate, parse, examine, and modify urls, and apply
+ normalization or resolution algorithms.

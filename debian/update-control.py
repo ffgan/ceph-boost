@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-#
+#!/usr/bin/env python3
 
 from deb822 import Deb822
 import re
@@ -38,21 +37,21 @@ def replaceVersion(string, ver1, ver2):
     return string
 
 def updateVersionedValue(paragraph, key):
-    if not paragraph.has_key(key): return
+    if key not in paragraph: return
     oldValue = paragraph[key]
     paragraph[key] = replaceVersion(paragraph[key], gOldVersion, gNewVersion)
     return (oldValue, paragraph[key])
 
 def conflictsWithPrevious(paragraph):
-    if not paragraph.has_key('Conflicts'): return False
-    nameRe = re.sub('\d', '\\d', paragraph['Package'])
+    if 'Conflicts' not in paragraph: return False
+    nameRe = re.sub('\\d', '\\\\d', paragraph['Package'])
     return re.search(nameRe, paragraph['Conflicts']) is not None
 
 def updateConflicts(paragraph, oldPkgName):
     newPkgName = paragraph['Package']
     needsConflict = (newPkgName.endswith("-dev") and not newPkgName.endswith("-all-dev")) or conflictsWithPrevious(paragraph)
     if not needsConflict: return
-    if paragraph.has_key('Conflicts'):
+    if 'Conflicts' in paragraph:
         if paragraph['Conflicts'].find(oldPkgName) == -1:
             paragraph['Conflicts'] += ', ' + oldPkgName
     else:
@@ -69,8 +68,8 @@ def processPackageParagraph(p):
     updateConflicts(p, oldPkgName)
 
 def printParagraph(p):
-    for key in p.keys():
-        print "%s: %s" % (key, p[key])
+    for key in list(p.keys()):
+        print("%s: %s" % (key, p[key]))
 
 def processControl():
     firstParagraph = True
@@ -81,11 +80,11 @@ def processControl():
             firstParagraph = False
         else:
             processPackageParagraph(paragraph)
-            print
+            print()
             printParagraph(paragraph)
 
 
 
-gOldVersion = BoostVersion('1.65.1')
-gNewVersion = BoostVersion('1.67.0')
+gOldVersion = BoostVersion('1.80.0')
+gNewVersion = BoostVersion('1.81.0')
 processControl()
