@@ -1,3 +1,61 @@
+boost1.82 (1.82.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream
+  * Bump default g++ version to 11.
+
+ -- Adam C. Emerson <aemerson@redhat.com>  Thu, 11 May 2023 11:49:06 -0400
+
+boost1.81 (1.81.0-5) unstable; urgency=medium
+
+  * [0330664] Better handling of the upstream version number
+  * [08cdf38] Add libboost-url1.81.0 to deps of libboost-url1.81-dev.
+              (Closes: #1035864)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 14 May 2023 22:52:13 +0200
+
+boost1.81 (1.81.0-4) unstable; urgency=medium
+
+  * [81c9de9] Add atomic as a dep of filesystem.
+  * [3ba2aa9] Fix arm* autopkgtest.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 15 Jan 2023 12:20:40 +0100
+
+boost1.81 (1.81.0-3) unstable; urgency=medium
+
+  * [3e9adf8] Fix MPI python module.
+  * [b85ba46] Fix python extensions.
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 14 Jan 2023 22:33:10 +0100
+
+boost1.81 (1.81.0-2) unstable; urgency=medium
+
+  * [b340cb8] Fix autopkgtests. Use 1.81 version. (Closes: #1028390)
+  * [4835103] Avoid boost::phoenix::placeholders violations.
+  * [f09f5a5] Trim trailing whitespace.
+  * [f3a250a] Update standards version to 4.6.2, no changes needed.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 13 Jan 2023 07:45:19 +0100
+
+boost1.81 (1.81.0-1) unstable; urgency=medium
+
+  * Upload into unstable.
+  * [da5bc00] Simplify d/rules
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 29 Dec 2022 16:28:04 +0100
+
+boost1.81 (1.81.0-1~exp1) experimental; urgency=medium
+
+  * New 1.81.0 release.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 26 Dec 2022 09:07:54 +0100
+
+boost1.81 (1.80.0-1~exp1) experimental; urgency=medium
+
+  * New 1.80.0 release.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 06 Nov 2022 10:49:03 +0100
+
 boost1.79 (1.79.0-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
@@ -18,6 +76,173 @@ boost1.74 (1.74.0-1.1) unstable; urgency=medium
   * New upstream.
 
  -- kefu chai <kefu@redhat.com>  Mon, 16 Nov 2020 11:34:53 +0800
+
+boost1.74 (1.74.0-17) unstable; urgency=medium
+
+  * Fix FTBFS with libxslt version 1.1.35 (closes: #1016321, #1015095).
+  * Fix shlibs symbols for Python 3.10 (closes: #1015998).
+
+ -- Giovanni Mascellani <gio@debian.org>  Sun, 28 Aug 2022 11:13:55 +0200
+
+boost1.74 (1.74.0-16.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/patches/74a94fe7f47b2e3f707cf4589fbb635a50f22ad2.patch:
+    - cherry-pick upstream asio change to fix exit failures with openssl 3.0.4
+      Closes: #1014180, #1013530, #1013472 and many others probably
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 04 Jul 2022 09:34:02 +0200
+
+boost1.74 (1.74.0-16) unstable; urgency=medium
+
+  [ Bernhard Übelacker ]
+  * [fa25a26] Make enum fix used at i386, armhf and armel.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 02 Jun 2022 06:26:21 +0200
+
+boost1.74 (1.74.0-15) unstable; urgency=medium
+
+  [ Bernhard Übelacker ]
+  * [9826f74] Fix enums at i386.
+  * [7f367ea] Add test for enums.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 31 May 2022 06:52:56 +0200
+
+boost1.74 (1.74.0-14) unstable; urgency=medium
+
+  * Fix b2 compilation on kFreeBSD (closes: #1003384).
+  * Fix missing UTIME_OMIT symbol on kFreeBSD.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 14 Jan 2022 09:41:55 +0100
+
+boost1.74 (1.74.0-13) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * Import fixes from Ubuntu
+  * [fabaa30] Import upstream patch:
+    fix asio compilation with -fno-rtti. (Closes: #999778)
+
+  [ Matthias Klose ]
+  * [2098d38] Explicitly set fpu mode on armhf. (Closes: #999853)
+
+  [ Graham Inggs ]
+  * [107cd01] Cherry-pick upstream commits:
+      - Convert Python 3.1+ to use public C API for filenames
+      - Replace private _Py_fopen() with public fopen(): private _Py_fopen()
+      - Fix Python 3.10 (PEP-620) incompatibility
+
+  [ Gianfranco Costamagna ]
+  * [7d6aad9] Cherry-pick upstream commits:
+    Cherry-pick upstream commits:
+      - e193f080c7d209516ac9b712fa0c50bb08026fa2.patch
+        Fix regex to allow search for python3.10 too (fixes e.g.
+        ros-image-common build)
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 19 Nov 2021 15:23:15 +0100
+
+boost1.74 (1.74.0-12) unstable; urgency=medium
+
+  * [96b62ca] Update autopkgtest for b/context. (Closes: #995571)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 28 Oct 2021 23:05:58 +0200
+
+boost1.74 (1.74.0-11) unstable; urgency=medium
+
+  [ Anton Gladky ]
+  * [fffe3c2] Fix includes and enable graph-tests.
+
+  [ Helmut Grohne ]
+  * [e3ba32f] Multiarchify python3-dev runtime dependency. (Closes: #983100)
+
+  [ Graham Inggs ]
+  * [7d9d824] Fix boost.mpi Python module install. (Closes: #994753)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 26 Sep 2021 19:23:11 +0200
+
+boost1.74 (1.74.0-10) unstable; urgency=medium
+
+  * [0bf0df0] Fix autopkgtests in testing. (Closes: #992223)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 16 Sep 2021 23:00:19 +0200
+
+boost1.74 (1.74.0-9) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * libboost1.74-dev: Smoothen upgrades from buster by depending on
+    libstdc++-${gxx:major}-dev using the build-time version of g++ instead of
+    the virtual libstdc++-dev provided by multiple packages.
+    (Closes: #984838)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 13 Mar 2021 09:21:38 +0100
+
+boost1.74 (1.74.0-8) unstable; urgency=medium
+
+  * [85a2610] Fix compilation warnings. (Closes: #980497)
+  * [1cd99ad] Set Standards-version to 4.5.1
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 23 Jan 2021 20:00:18 +0100
+
+boost1.74 (1.74.0-7) unstable; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * [8b3d244] Fix ptree_serialization failing to build with boost1.74.
+    (Closes: #977230)
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 04 Jan 2021 22:17:05 +0100
+
+boost1.74 (1.74.0-6) unstable; urgency=medium
+
+  * [25520d6] Fix detection of ASM-files for mipsel. (Closes: #977921)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 26 Dec 2020 15:18:55 +0100
+
+boost1.74 (1.74.0-5) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * [6a1ba93] Add a way to identify GNU/Hurd with b2. (Closes: #977414)
+
+  [ Anton Gladky ]
+  * [9569ec1] Update watch file format version to 4.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 17 Dec 2020 21:24:03 +0100
+
+boost1.74 (1.74.0-4) unstable; urgency=medium
+
+  * [283f917] Fix description for nowide-library
+  * [fa3c8ab] Add Breaks+Replaces: libleatherman-dev (<< 1.12.1+dfsg-1.1~)
+              to libbost1.74-dev. (Closes: #977310)
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 13 Dec 2020 22:55:30 +0100
+
+boost1.74 (1.74.0-3) unstable; urgency=medium
+
+  * [b66a37a] Install b2. (Closes: #975446)
+  * [508a668] Bump debhelper from old 10 to 12.
+    + debian/rules: Rely on default use of dh_missing rather
+      than using dh_install --list-missing.
+  * [97c2bd1] Set debhelper-compat version in Build-Depends.
+  * [e26eec0] Remove listed license files
+  * [51d69a5] Drop transition for old debug package migration.
+  * [076941c] Remove Section on some libs  hat duplicate source.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 27 Nov 2020 20:37:42 +0100
+
+boost1.74 (1.74.0-2) unstable; urgency=medium
+
+  * [a634d58] Add libboost-nowide1.74-dev into libboost1.74-dev.
+  * [c60ee8c] Allow graph, log and thread tests to output into stderr.
+  * [4b70713] Remove usage of deprecated headers. (Closes: #974577)
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 17 Nov 2020 22:30:42 +0100
+
+boost1.74 (1.74.0-1) unstable; urgency=medium
+
+  * New upstream version.
+    + Update Debian patches.
+    + Update debian/copyright.
+  * Fix little bugs in debian/rules.
+
+ -- Giovanni Mascellani <gio@debian.org>  Sun, 18 Oct 2020 20:13:31 +0200
 
 boost1.73 (1.73.0-1) unstable; urgency=medium
 
@@ -40,11 +265,186 @@ boost1.71 (1.71.0-1) unstable; urgency=medium
 
  -- kefu chai <kefu@redhat.com>  Thu, 14 Nov 2019 12:39:10 +0800
 
+boost1.71 (1.71.0-7) unstable; urgency=medium
+
+  * Do not install stacktrace_backtrace on m68k, where it is not built
+    (closes: #962072). Thanks to Adrian Glaubitz for the patch.
+  * Fix broken macOS detection, conflicting with GNU/Hurd
+    (closes: #960090). Thanks to Pino Toscano for the patch.
+  * Fix some lintian warnings.
+
+ -- Giovanni Mascellani <gio@debian.org>  Mon, 12 Oct 2020 09:50:03 +0200
+
+boost1.71 (1.71.0-6) unstable; urgency=medium
+
+  * [ef8987f] Fix python autopkgtest. (closes: #950688)
+  * [aad42c4] Trim trailing whitespace.
+  * [5b9edee] Fix failing autopkgtest graph-parallel
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 04 Feb 2020 22:10:35 +0100
+
+boost1.71 (1.71.0-5) unstable; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * Cherrypick further patches to document and optimize context on
+    s390x. LP: #1859941
+  * Simplify debian/rules slightly, by dropping resetting the default
+    values.
+  * Skip building numpy on Ubuntu:i386.
+
+  [ Giovanni Mascellani ]
+  * Expose Python version information in dependencies to Python packages, so
+    that removing a supported Python version does not result in silently
+    broken reverse dependencies (closes: #948273). Thanks to Andreas Beckmann
+    for the patch.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 30 Jan 2020 15:50:23 +0000
+
+boost1.71 (1.71.0-4) unstable; urgency=medium
+
+  [ Giovanni Mascellani ]
+  * Transition to the Salsa CI team pipeline.
+  * Enable -context on mips64el (closes: #948015).
+  * Set graph-parallel test as flaky until
+    https://github.com/boostorg/graph_parallel/issues/21 is resolved.
+  * Compile test context/demo1.cpp only on amd64, because it uses some
+    architecture specific instructions.
+
+  [ Dimitri John Ledkov ]
+  * Add chrono to thread autopkgtest until
+    https://github.com/boostorg/boost_install/issues/27 is resolved.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 10 Jan 2020 14:26:58 +0100
+
+boost1.71 (1.71.0-3) unstable; urgency=medium
+
+  [ Giovanni Mascellani ]
+  * Update autopkgtest dependencies to 1.71.
+  * Fix some missing dependencies between -dev packages, found thanks to
+    autopkgtest.
+  * Remove signals from autopkgtest.
+  * Cleanup Debian patches.
+
+  [ Dimitri John Ledkov ]
+  * Cherrypick upstream patch to enable context on s390x. LP: #1694926
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 03 Jan 2020 11:11:45 +0100
+
+boost1.71 (1.71.0-2) unstable; urgency=medium
+
+  * Enable -context on riscv64 (closes: #947651). Thanks to Aurelien Jarno for
+    the patch.
+  * Install cmake boost_headers files.
+
+ -- Giovanni Mascellani <gio@debian.org>  Tue, 31 Dec 2019 15:25:01 +0100
+
+boost1.71 (1.71.0-1) unstable; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * Remove myself from uploaders.
+  * Provide and Encode icuabi in libboost-regex shlibdeps. This de-couples
+    boost & icu transitions.
+  * Fix debian/watch to point at dl.bintray.com
+  * Drop py2 builds. (Closes: #936227)
+  * Drop Debian-only compat py library symlinks. (Closes: #914513)
+  * Ship cmake files, hopefully they are right.
+  * Enable documentation index.
+
+  [ Giovanni Mascellani ]
+  * Add -contract as dependency of -dev-all.
+  * Update to new upstream release 1.71.0.
+    + Acknowledge removal of signals library.
+    + Tweak build script accordingly.
+  * Regenerate bison grammar for jam at build time.
+  * Enable LZMA and zstd filters in -iostreams.
+
+ -- Giovanni Mascellani <gio@debian.org>  Thu, 26 Dec 2019 10:26:16 +0100
+
 boost1.67 (1.67.0-7) unstable; urgency=medium
 
   * generate PPA package for ceph building dependency
 
  -- kefu chai <kefu@redhat.com>  Tue, 04 Sep 2018 15:22:43 +0800
+
+boost1.67 (1.67.0-13) unstable; urgency=medium
+
+  * [c573257] Fix FTBFS in boost.compute with GCC-8. (Closes: #921247)
+  * [086d453] Trim trailing whitespace.
+  * [d21d6e3] Use secure URI in Homepage field.
+  * [957aa8b] Bump debhelper from old 9 to 10.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 04 Feb 2019 15:25:45 +0100
+
+boost1.67 (1.67.0-12) unstable; urgency=medium
+
+  * Add patch to fix FTBFS of package bali-phy on ppc64* (closes: #903665).
+  * Ignore file .gitlab-ci.yml when creating the source package.
+  * Expose supported Python version as virtual packages, so that reverse
+    dependencies can depend on the right package (closes: #911625).
+  * Work around broken architecture detection under x32.
+
+ -- Giovanni Mascellani <gio@debian.org>  Wed, 23 Jan 2019 12:14:16 +0100
+
+boost1.67 (1.67.0-11) unstable; urgency=medium
+
+  [ Giovanni Mascellani ]
+  * Split debian/rules into arch and indep rules, so that arch-independent
+    packages are not uselessly built when arch-dependent packages are
+    requested and viceversa (closes: #914053).
+    + This should also fix some intermittent FTBFS (closes: #913709).
+  * Backport patch to fix build on kFreeBSD (closes: #913710).
+  * Quit quickly if compilation fails, in order to save on CPU cycles
+    and produce easier-to-read build logs.
+
+  [ Dimitri John Ledkov ]
+  * Cherrypick predef upstream patch to correctly detect BOOST_OS_LINUX
+    using __linux__ define (closes: #914688).
+
+  [ Giovanni Mascellani ]
+  * Replace other appearances of __linux with __linux__.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 30 Nov 2018 18:12:49 +0100
+
+boost1.67 (1.67.0-10) unstable; urgency=medium
+
+  [ Giovanni Mascellani ]
+  * Rebuild against icu 63.
+    + Add shlibs versioning information and breakages so that reverse
+      dependencies are rebuilt appropriately.
+  * Fail on errors happening inside bash for loops (closes: #912910).
+
+  [ Dimitri John Ledkov ]
+  * Add breaks on nheko in unstable.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 13 Nov 2018 12:47:47 +0000
+
+boost1.67 (1.67.0-9) unstable; urgency=medium
+
+  * Drop rtupdate logic for python2, it was never ported to python3 and
+    upstream has moved onto co-installable names anyway. Also python2
+    default is not going change ever again.
+  * Include patch to unbreak mongo testsuite with boost 1.67 program
+    options.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 01 Nov 2018 17:19:30 +0000
+
+boost1.67 (1.67.0-8) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/rules: Remove trailing whitespaces
+  * d/watch: Use https protocol
+
+  [ Giovanni Mascellani ]
+  * Add a missing #include line.
+
+ -- Giovanni Mascellani <gio@debian.org>  Fri, 26 Oct 2018 17:22:09 +0200
+
+boost1.67 (1.67.0-7) unstable; urgency=medium
+
+  * [99c7ebf] Remove dependency on libstdc++(-4.8|)-dev. (Closes: #908737)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 13 Sep 2018 20:57:27 +0200
+>>>>>>> upstream/1.81.0
 
 boost1.67 (1.67.0-6) unstable; urgency=medium
 

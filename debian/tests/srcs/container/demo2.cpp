@@ -1,61 +1,42 @@
-// https://www.boost.org/doc/libs/1_67_0/doc/html/container/main_features.html
+//////////////////////////////////////////////////////////////////////////////
+//
+// (C) Copyright Ion Gaztanaga 2009-2013. Distributed under the Boost
+// Software License, Version 1.0. (See accompanying file
+// LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+//
+// See http://www.boost.org/libs/container for documentation.
+//
+//////////////////////////////////////////////////////////////////////////////
 
-#include <boost/container/vector.hpp>
-#include <boost/container/stable_vector.hpp>
-#include <boost/container/deque.hpp>
+//[doc_emplace
 #include <boost/container/list.hpp>
-#include <boost/container/map.hpp>
-#include <boost/container/string.hpp>
+#include <cassert>
 
-using namespace boost::container;
-
-struct data
+//Non-copyable and non-movable class
+class non_copy_movable
 {
-   int               i_;
-   //A vector holding still undefined class 'data'
-   vector<data>      v_;
-   vector<data>::iterator vi_;
-   //A stable_vector holding still undefined class 'data'
-   stable_vector<data> sv_;
-   stable_vector<data>::iterator svi_;
-   //A stable_vector holding still undefined class 'data'
-   deque<data> d_;
-   deque<data>::iterator di_;
-   //A list holding still undefined 'data'
-   list<data>        l_;
-   list<data>::iterator li_;
-   //A map holding still undefined 'data'
-   map<data, data>   m_;
-   map<data, data>::iterator   mi_;
+   non_copy_movable(const non_copy_movable &);
+   non_copy_movable& operator=(const non_copy_movable &);
 
-   friend bool operator <(const data &l, const data &r)
-   { return l.i_ < r.i_; }
+   public:
+   non_copy_movable(int = 0) {}
 };
 
-struct tree_node
+int main ()
 {
-   string name;
-   string value;
+   using namespace boost::container;
 
-   //children nodes of this node
-   list<tree_node>            children_;
-   list<tree_node>::iterator  selected_child_;
-};
+   //Store non-copyable and non-movable objects in a list
+   list<non_copy_movable> l;
+   non_copy_movable ncm;
 
+   //A new element will be built calling non_copy_movable(int) constructor
+   l.emplace(l.begin(), 0);
+   assert(l.size() == 1);
 
-
-int main()
-{
-   //a container holding a recursive data type
-   stable_vector<data> sv;
-   sv.resize(100);
-
-   //Let's build a tree based in
-   //a recursive data type
-   tree_node root;
-   root.name  = "root";
-   root.value = "root_value";
-   root.children_.resize(7);
-   root.selected_child_ = root.children_.begin();
+   //A new element will be value initialized
+   l.emplace(l.begin());
+   assert(l.size() == 2);
    return 0;
 }
+//]

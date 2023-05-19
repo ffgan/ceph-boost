@@ -1,11 +1,5 @@
-fix-ftbfs-python-3.3.patch
-# no longer applies; hppa-long-double-config.patch
-# No longer applies; may not be needed boost-python-examples.patch
-ppc64el-fp_traits-ibm-long-double.patch
-no-gcc-m-options.diff
-no-gcc-march-options.patch
-make-docs-use-offline-resources-only.patch
-#83ab00c067d4111496f760c144d323ac311b7f2c.patch
-# No longer applies; fix-python-mpi.patch
-disable-remote-links.patch
+15.patch
+20_remove_privacy_breach.patch
+116.patch
 fix-mpi-python37.patch
+fix_extension.patch

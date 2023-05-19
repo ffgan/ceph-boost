@@ -1,89 +1,96 @@
 Tests: atomic
-Depends: libboost-atomic1.67-dev, build-essential, cmake
+Depends: ceph-libboost-atomic1.82-dev, build-essential, cmake
 
 Tests: chrono
-Depends: libboost-chrono1.67-dev, libboost-system1.67-dev, build-essential, cmake
+Depends: ceph-libboost-chrono1.82-dev, ceph-libboost-system1.82-dev, build-essential, cmake
 
 Tests: context
-Depends: libboost-context1.67-dev, build-essential, cmake
+Depends: ceph-libboost-context1.82-dev, build-essential, cmake
 
 Tests: container
-Depends: libboost-container1.67-dev, libboost-system1.67-dev, build-essential, cmake
+Depends: ceph-libboost-container1.82-dev, ceph-libboost-system1.82-dev, build-essential, cmake
 
 Tests: coroutine
-Depends: libboost-coroutine1.67-dev, libboost-system1.67-dev, build-essential, cmake
+Depends: ceph-libboost-coroutine1.82-dev, ceph-libboost-system1.82-dev, build-essential, cmake
 
 Tests: datetime
-Depends: libboost-date-time1.67-dev, build-essential, cmake
+Depends: ceph-libboost-date-time1.82-dev, build-essential, cmake
 
 Tests: exception
-Depends: libboost-exception1.67-dev, build-essential, cmake
+Depends: ceph-libboost-exception1.82-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: fiber
-Depends: libboost-fiber1.67-dev, build-essential, cmake
+Depends: ceph-libboost-fiber1.82-dev, build-essential, cmake
 
 Tests: filesystem
-Depends: libboost-filesystem1.67-dev, build-essential, cmake
+Depends: ceph-libboost-filesystem1.82-dev, build-essential, cmake
 
 Tests: graph
-Depends: libboost-graph1.67-dev, build-essential, cmake
+Depends: ceph-libboost-graph1.82-dev, build-essential, cmake
+Restrictions: allow-stderr
 
 Tests: graph-parallel
-Depends: libboost-graph-parallel1.67-dev, libboost-mpi1.67-dev, libboost-system1.67-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Depends: ceph-libboost-graph-parallel1.82-dev, ceph-libboost-mpi1.82-dev, ceph-libboost-system1.82-dev, mpi-default-dev, build-essential, libgraph-easy-perl, cmake
+Restrictions: allow-stderr
 
 Tests: iostreams
-Depends: libboost-iostreams1.67-dev, build-essential, cmake
+Depends: ceph-libboost-iostreams1.82-dev, build-essential, cmake
 
 Tests: locale
-Depends: libboost-locale1.67-dev, build-essential, cmake
+Depends: ceph-libboost-locale1.82-dev, build-essential, cmake
 
 Tests: log
-Depends: libboost-log1.67-dev, build-essential, cmake
+Depends: ceph-libboost-log1.82-dev, build-essential, cmake
+Restrictions: allow-stderr
 
 Tests: math
-Depends: libboost-math1.67-dev, build-essential, cmake
+Depends: ceph-libboost-math1.82-dev, build-essential, cmake
 
 Tests: mpi
-Depends: libboost-mpi1.67-dev, mpi-default-dev, build-essential, cmake
+Depends: ceph-libboost-mpi1.82-dev, mpi-default-dev, build-essential, cmake
+Restrictions: allow-stderr
 
 Tests: mpi-python
-Depends: libboost-mpi-python1.67-dev, mpi-default-dev, python-minimal
+Depends: ceph-libboost-mpi-python1.82-dev, mpi-default-dev, python3-minimal
+Restrictions: allow-stderr
 
 Tests: program-options
-Depends: libboost-program-options1.67-dev, build-essential, cmake
+Depends: ceph-libboost-program-options1.82-dev, build-essential, cmake
 
 Tests: python
-Depends: libboost-python1.67-dev, python-minimal, cmake, build-essential, clang
+Depends: ceph-libboost-python1.82-dev, python3-minimal, cmake, build-essential, clang
+Restrictions: allow-stderr
 
 Tests: random
-Depends: libboost-random1.67-dev, build-essential, cmake
+Depends: ceph-libboost-random1.82-dev, build-essential, cmake
 
 Tests: regex
-Depends: libboost-regex1.67-dev, build-essential, cmake, html2text
+Depends: ceph-libboost-regex1.82-dev, build-essential, cmake, html2text
 
 Tests: serialization
-Depends: libboost-serialization1.67-dev, libboost-random1.67-dev, build-essential, cmake
+Depends: ceph-libboost-serialization1.82-dev, ceph-libboost-random1.82-dev, build-essential, cmake
 
 Tests: stacktrace
-Depends: libboost-stacktrace1.67-dev, libboost-system1.67-dev, build-essential, cmake
+Depends: ceph-libboost-stacktrace1.82-dev, ceph-libboost-system1.82-dev, build-essential, cmake
 
 Tests: system
-Depends: libboost-system1.67-dev, build-essential, cmake
+Depends: ceph-libboost-system1.82-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: test
-Depends: libboost-test1.67-dev, build-essential, cmake
+Depends: ceph-libboost-test1.82-dev, build-essential, cmake
 Restrictions: allow-stderr
 
 Tests: thread
-Depends: libboost-thread1.67-dev, build-essential, cmake
+Depends: ceph-libboost-thread1.82-dev, build-essential, cmake
+Restrictions: allow-stderr
 
 Tests: timer
-Depends: libboost-timer1.67-dev, build-essential, cmake
+Depends: ceph-libboost-timer1.82-dev, build-essential, cmake
 
 Tests: type-erasure
-Depends: libboost-type-erasure1.67-dev, build-essential, cmake
+Depends: ceph-libboost-type-erasure1.82-dev, build-essential, cmake
 
 Tests: wave
-Depends: libboost-wave1.67-dev, libboost-thread1.67-dev, build-essential, cmake
+Depends: ceph-libboost-wave1.82-dev, ceph-libboost-thread1.82-dev, build-essential, cmake

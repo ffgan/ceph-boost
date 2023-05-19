@@ -16,10 +16,14 @@ make
 
 echo "build: OK"
 
-[ -x demo1 ]
-./demo1
+if [ "`uname -m`" = "x86_64" ] ; then
+    [ -x demo1 ]
+    ./demo1
 
-echo "run: demo1 OK"
+    echo "run: demo1 OK"
+else
+    echo "run: demo1 SKIPPED (because arch is not amd64)"
+fi
 
 [ -x demo2 ]
 ./demo2

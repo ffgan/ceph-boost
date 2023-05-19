@@ -2,4 +2,4 @@
 
 import boost.mpi as mpi
 
-print "I am process %d of %d." % (mpi.rank, mpi.size)
+print("I am process %d of %d." % (mpi.rank, mpi.size))
