@@ -1470,7 +1470,7 @@ Architecture: any
 Multi-Arch: same
 Section: libdevel
 Depends: ${misc:Depends},
- ceph-libboost1.21-dev (= ${binary:Version}),
+ ceph-libboost1.82-dev (= ${binary:Version}),
  ceph-libboost-container1.82-dev (= ${binary:Version}),
  ceph-libboost-system1.82-dev (= ${binary:Version})
 Description: C++ containers and algorithms that implement JSON
